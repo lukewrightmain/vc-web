@@ -1,0 +1,693 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+    background-color: #ddd;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/*#################START################### */
+/*----------HEADER/NAVBAR STYLES----------- */
+/*######################################### */
+header {
+  background-color: #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 70px;
+  display: flex; /* add flex container to the header */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-right: 20px;
+}
+
+
+.main-nav li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+.main-nav li a:hover {
+    background-color: #e6e6e6;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #0b3950;
+}
+
+@media(max-width:915px){
+  .hamburger{
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .main-nav{
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #ddd;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main-nav.active{
+    left: 0px;
+    text-align: center;
+  }
+}
+
+/*##################END#################### */
+/*----------HEADER/NAVBAR STYLES----------- */
+/*######################################### */
+
+/*#################START################### */
+/*-----------MAIN CONTENT STYLES----------- */
+/*######################################### */
+
+/* Set the main container to be 100% of the viewport height */
+main {
+  height: 100vh;
+}
+
+/* Set the main content wrapper to be centered and max-width of 1920px */
+.main-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* Set the main content container to be a flex container */
+.main-content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Set the section divs to have a base width of 1920px and height of 1080px */
+.sections {
+  width: 100vw;
+  height: auto;
+}
+
+/*##################END#################### */
+/*-----------MAIN CONTENT STYLES----------- */
+/*######################################### */
+
+/*#################START################### */
+/*-----------Section One |STYLES----------- */
+/*######################################### */
+
+/* Font Sizes */
+.content-wrapper h1{
+  color: #ddd;
+  font-size: 9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.content-wrapper p{
+  color: #6cc8d4;
+  font-size: 1.6em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+p span.white {
+  color: #ddd;
+}
+
+p span.skyblue {
+  color: #6cc8d4;
+}
+
+/* Set the background photo to fill the entire section */
+.bg-photo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Set the section to be a flex container */
+#sec1 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Add a content wrapper for the text content to overlay the image */
+.content-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .content-wrapper h1 {
+    font-size: 6em; /* decrease the font size */
+    line-height: 1.2; /* decrease the line-height */
+  }
+}
+
+/*##################END#################### */
+/*-----------Section One |STYLES----------- */
+/*######################################### */
+
+/*#################START################### */
+/*-----------Transition-Sections----------- */
+/*######################################### */
+
+#trans1 {
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bg-transition{
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 2;
+}
+.bg-transition2{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
+    z-index: 2;
+  }
+
+/*##################END#################### */
+/*-----------Transition-Sections----------- */
+/*######################################### */
+
+/*Mid Container*/
+
+.mid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 100%;
+  background-color: #093246;
+}
+
+.mid-box {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.mid-box:hover {
+  transform: scale(1.05);
+}
+
+
+.mid-box img {
+  max-width: 30%;
+  height: auto;
+}
+
+.mid-box h2{
+  color: #ddd;
+}
+
+.mid-box p{
+  color: #6cc8d4;
+}
+
+@media (max-width: 768px) {
+  .mid-container {
+    height: 90vh;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .mid-box {
+    width: 90%;
+    margin: 1em auto;
+  }
+  .mid-box img {
+    max-width: 20%;
+    height: auto;
+  }
+}
+
+/*#################START################### */
+/*-----------Section TWO |STYLES----------- */
+/*######################################### */
+
+/* Set the section to be a flex container */
+#sec2 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+.watch-container {
+  position: absolute;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+  
+.row {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+  
+  .col {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .watchbox {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .watchbox img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  .watchbox p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .watchbox button {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .watchbox button:hover {
+    background-color: #555;
+  }
+
+.img-wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+}
+
+@media (max-width: 1023px) {
+  .col {
+    flex-basis: 50%; /* set the width to 50% */
+    margin: 5px; /* reduce the margin */
+    max-width: calc(50% - 10px);
+  }
+  .watchbox {
+    padding: 10px; /* reduce the padding */
+  }
+}
+
+@media (max-width: 550px) {
+  .row {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+  }
+  .col {
+    margin: 5px; /* reduce the margin */
+    max-width: calc(100% - 150px);
+  }
+}
+/*##################END#################### */
+/*-----------Section TWO |STYLES----------- */
+/*######################################### */
+
+/*#################START################### */
+/*-----------Transition-Sections----------- */
+/*######################################### */
+
+#trans1 {
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/*##################END#################### */
+/*-----------Transition-Sections----------- */
+/*######################################### */
+
+/*#################START################### */
+/*----------Section THREE |STYLES---------- */
+/*######################################### */
+
+/* Set the section to be a flex container */
+#sec3 {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #093246;
+}
+
+#abt-ctn {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.col2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+  padding: 10px;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.col2:hover {
+  transform: scale(1.05);
+}
+
+.col2 a {
+  display: block;
+  width: 100%;
+}
+
+.col2 a:hover img {
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.col2 img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+.col2 h2 {
+  color: #6cc8d4;
+}
+
+.col2 p {
+  color: #ddd;
+}
+
+.btn-3 {
+  border: none;
+  background-color: #0b3950;
+  color: white;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-3:hover {
+  background-color: #fff;
+  color: #0b3950;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .col2 {
+    flex-basis: 100%;
+  }
+
+  .eventord1 {
+    order: 1;
+  }
+
+  .eventord2 {
+    order: 2;
+  }
+}
+/*##################END#################### */
+/*----------Section THREE |STYLES---------- */
+/*######################################### */
+
+#sec4 {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #093246;
+}
+
+/* Styling for ft-container */
+.ft-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 4px solid #ddd;
+}
+
+/* Styling for ft-nav */
+.ft-nav {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.ft-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.ft-nav li {
+  margin: 10px 0;
+}
+
+.ft-nav a {
+  text-decoration: none;
+  color: #555;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Styling for ft-scroll-top */
+.ft-scroll-top {
+  margin: 20px 0;
+  width: 33.3%;
+  display: flex;
+  justify-content: center
+}
+
+
+/* Styling for ft-footer */
+.ft-footer {
+  width: 33.3%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ft-footer p {
+  font-size: 14px;
+  color: #999;
+}
+
+.ft-footer p:last-of-type {
+  margin-top: 5px;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+  /* Apply horizontal layout for screens wider than 768px */
+  .ft-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .ft-nav {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .ft-nav li {
+    margin: 0 10px;
+  }
+
+  .ft-nav a {
+    font-size: 16px;
+  }
+
+  .ft-scroll-top {
+    order: 2;
+    margin: 0;
+  }
+
+  .ft-footer {
+    order: 3;
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Apply vertical layout for screens narrower than 768px */
+  .ft-nav li {
+    margin: 10px 0;
+  }
+
+  .ft-scroll-top {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  .ft-footer {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}

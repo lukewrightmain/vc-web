@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/events.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Events</title>
+</head>
+<body>
+    <header>
+		<nav class="navbar">
+			<div class="logo">
+				<a href="#"><img src="../images/home-pictures/NewLogoAnchor.webp" alt="Victory Churhc Logo"></a>
+			</div>
+			<ul class="main-nav">
+        <li class="nav-item"><a href="../index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="visit.html">Visit</a></li>
+        <li class="nav-item"><a href="events.html">Events</a></li>
+        <li class="nav-item"><a href="media.html">Media</a></li>
+        <li class="nav-item"><a href="ministries.html">Ministries</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="summit.html">Summit</a></li>
+        <li class="nav-item"><a href="give.html">Give</a></li>
+			</ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+		</nav>
+	</header>
+    <main>
+		<div class="events-wrapper" id="events">
+			<div class="events-container">
+				<div class="sections" id="sec1" alt="1st">
+                    <img src="../images/events-pictures/events.png" class="bg-photo">
+                    <img src="../images/events-pictures/seperator2.png" class="bg-transition2">
+                    <div class="content-wrapper">
+                        <h1>
+                            Calendar & Events
+                        </h1>
+                        <div class="top-btn">
+                            <button class="btn-nav" onclick="smoothScroll('#sec2')">Calendar</button>
+                            <button class="btn-nav" onclick="smoothScroll('#bg3')">Events</button>
+                            <button class="btn-nav" onclick="smoothScroll('#bg3')">Plan an Event</button>
+                        </div>
+                    </div>
+                </div>
+				<div class="sections" id="sec2" alt="2nd">
+					<img src="../images/events-pictures/seperator.png" class="bg-transition">
+                    <div class="calendar-wrapper">
+                        <div class="calendar-title">
+                            <h1>Calendar</h1>
+                        </div>
+                        <div class="calendar-container" id="calendar-container">
+							<iframe id="calendarFrame"
+							src="https://victorychurchwi.churchcenter.com/calendar?embed=true&view=list" 
+							style="width: 100%; height: 500px;" class="planning-center-calender-embed" frameborder="0">
+							</iframe>
+							<a href="https://victorychurchwi.churchcenter.com/calendar?embed=true&view=list">
+								<button class="btn-nav">List View (🖨️)</button>
+							</a>
+							<a href="https://victorychurchwi.churchcenter.com/calendar?embed=true&view=month">
+								<button class="btn-nav">Month View (🖨️)</button>
+							</a>
+						</div>
+					</div>
+					<img src="../images/events-pictures/seperator2.png" class="bg-transition3" id="bg3">
+				</div>
+				<div class="sections" id="sec3" alt="3nd">
+					<div class="el-wrapper">
+						<div class="el-container">
+							<div class="el-title">
+								<h1>Events</h1>
+								<a href="https://victorychurchwi.churchcenter.com/registrations/events"><button class="btn-nav f-evt-button">All Events</button></a>
+							</div>
+							<div class="el-content">
+								<div class="featured-events-wrapper">
+								  <div class="f-evt" id="evt1">
+									<div class="f-evt-inner">
+									  <div class="f-evt-front">
+										<img src="../images/events-pictures/events.png" alt="Event Image">
+										<h3 class="f-evt-title">Event Title</h3>
+									  </div>
+									  <div class="f-evt-back">
+										<p class="f-evt-description">Event Description</p>
+										<button class="btn-nav f-evt-button">Learn More</button>
+									  </div>
+									</div>
+								  </div>
+								  <div class="f-evt" id="evt2">
+									<div class="f-evt-inner">
+										<div class="f-evt-front">
+										  <img src="../images/events-pictures/events.png" alt="Event Image">
+										  <h3 class="f-evt-title">Event Title</h3>
+										</div>
+										<div class="f-evt-back">
+										  <p class="f-evt-description">Event Description</p>
+										  <button class="btn-nav f-evt-button">Learn More</button>
+										</div>
+									  </div>
+								  </div>
+								  <div class="f-evt" id="evt3">
+									<div class="f-evt-inner">
+										<div class="f-evt-front">
+										  <img src="../images/events-pictures/events.png" alt="Event Image">
+										  <h3 class="f-evt-title">Event Title</h3>
+										</div>
+										<div class="f-evt-back">
+										  <p class="f-evt-description">Event Description</p>
+										  <button class="btn-nav f-evt-button">Learn More</button>
+										</div>
+									  </div>
+								  </div>
+								</div>
+								<div class="plan-event-wrapper">
+								  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScghAzcEwj7Pg0mXBCR3tVcBMfv9Gw_xCSVbseT_sdtalacIA/viewform?embedded=true" frameborder="0"></iframe>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+				<img src="../images/events-pictures/seperator.png" class="bg-transition">
+				<div class="sectionss" id="sec4" alt="ft">
+                    <div class="ft-container">
+                      <div class="ft-nav">
+                        <ul>
+                          <li><a href="../index.html">Home</a></li>
+                          <li><a href="about.html">About</a></li>
+                          <li><a href="events.html">Events</a></li>
+                          <li><a href="ministries.html">Ministries</a></li>
+                          <li><a href="give.html">Give</a></li>
+                        </ul>
+                      </div>
+                      <div class="ft-scroll-top">
+                        <button class="btn-3" onclick="scrollToTop()">Scroll to Top</button>
+                      </div>
+                      <div class="ft-footer">
+                        <p>Website developed by Victory Church</p>
+                        <p>2023 &copy; Victory Church. All Rights Reserved.</p>
+                      </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+    </main>
+	<script>
+        function smoothScroll(target) {
+          const element = document.querySelector(target);
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+	<script>
+		function scrollToTop() {
+		  const eventsPage = document.querySelector('#events');
+		  eventsPage.scrollIntoView({ behavior: 'smooth' });
+		}
+	</script>
+	<script type="text/javascript" src="/js/navmenutoggle.js"></script> 
+</body>

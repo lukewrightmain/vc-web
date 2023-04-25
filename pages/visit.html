@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../styles/visit.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <title>Visit</title>
+    </head>
+<body>
+    <header>
+		<nav class="navbar">
+			<div class="logo">
+				<a href="#"><img src="../images/home-pictures/NewLogoAnchor.webp" alt="Victory Churhc Logo"></a>
+			</div>
+			<ul class="main-nav">
+        <li class="nav-item"><a href="../index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="visit.html">Visit</a></li>
+        <li class="nav-item"><a href="events.html">Events</a></li>
+        <li class="nav-item"><a href="media.html">Media</a></li>
+        <li class="nav-item"><a href="ministries.html">Ministries</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="summit.html">Summit</a></li>
+        <li class="nav-item"><a href="give.html">Give</a></li>
+			</ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+		</nav>
+	</header>
+    <main>
+        <div class="visit-wrapper">
+            <div class="visit-container">
+                <div class="sections" id="sec1" alt="1st">
+                    <img src="../images/ministries-pictures/ministry.png" class="bg-photo">
+                    <img src="../images/ministries-pictures/seperator2.png" class="bg-transition2">
+                    <div class="content-wrapper">
+                        <h1>
+                            Plan a Visit
+                        </h1>
+                        <div class="top-btn">
+                            <button class="btn-nav" onclick="smoothScroll('#sec2')">Let Us Know You Are Coming</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sections" id="sec5">
+                    <img src="../images/ministries-pictures/seperator.png" class="bg-transition">
+                    <div class="visittx-wrapper">
+                      <div class="visittx-container">
+                        <h2>GETTING TO KNOW EACH OTHER</h2>
+                        <p>We know meeting someone for the first time can be intimidating, and going to a new church for the first time can be nerve-racking. We want to help make your first experience at Victory Church a great one!</p>
+                  
+                        <h3>VICTORY CHURCH SERVICE TIMES</h3>
+                        <ul>
+                          <li>Waupaca Campus: Sundays at 8:30 a.m. &amp; 10:15 a.m.</li>
+                          <li>New London Campus: Sundays at 9:30 a.m.</li>
+                          <li>Spanish Campus: Sundays at 10:00 a.m.</li>
+                        </ul>
+                  
+                        <h3>WHAT CAN I EXPECT?</h3>
+                        <p>How long is a Victory Church service? In total, a Victory Church service is about 1 hour and 15 minutes. Services begin with the Victory Church band leading the church in music - lyrics are put onto screens so you can sing along and/or engage with worship however you feel most comfortable. After the music portion of the service is complete, one of our pastors will come out to share an encouraging and hope-filled message from the Bible. After the service, you are invited to join us for a time of snacks and fellowship.</p>
+                  
+                        <h3>WHAT IS THE CULTURE LIKE AT VICTORY CHURCH?</h3>
+                        <p>Sunday's at Victory Church are exciting, casual, and family-friendly. When you first come in, you can stop by our welcome center, check your kids into Kid's Church, and/or find a seat in the Sanctuary.</p>
+                  
+                        <h3>WHAT ABOUT MY KIDS?</h3>
+                        <p>We believe that kids should have a blast at church every single week - and at Victory Church, we make this a priority. The other thing we make a priority is your child's safety. Because of that, we have a check-in process for the Victory Church Kid's program. The first time you visit, you will want to give yourself an extra ten minutes to get signed in for Victory Church Kid's Church. Kid's Church is offered at all Sunday services for infants through age 8.</p>
+                      </div>
+                    </div>
+                  </div>                  
+                <div class="sections" id="sec2" alt="2nd">
+                    <div class="container">
+                      <form id="visit-form" method="POST" action="https://formsubmit.co/d6b6639049541b6e8f7880e97b13378e">
+                        <label>Let Us Know You Are Coming</label>
+                        <div class="form-group">
+                          <label for="name">Name:</label>
+                          <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email:</label>
+                          <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="service">Service:</label>
+                          <select id="service" name="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="Waupaca 8:30am">Waupaca 8:30am Service</option>
+                            <option value="Waupaca 10:15am">Waupaca 10:15am Service</option>
+                            <option value="New London 9:30am">New London 9:30am Service</option>
+                            <option value="Español 10:15am">Español 10:15am Service</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="send-btn">
+                        <button type="submit">Submit</button>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+                <div class="sections" id="sec4" alt="ft">
+                    <div class="ft-container">
+                      <div class="ft-nav">
+                        <ul>
+                          <li><a href="../index.html">Home</a></li>
+                          <li><a href="about.html">About</a></li>
+                          <li><a href="events.html">Events</a></li>
+                          <li><a href="ministries.html">Ministries</a></li>
+                          <li><a href="give.html">Give</a></li>
+                        </ul>
+                      </div>
+                      <div class="ft-scroll-top">
+                        <button class="btn-3" onclick="scrollToTop()">Scroll to Top</button>
+                      </div>
+                      <div class="ft-footer">
+                        <p>Website developed by Victory Church</p>
+                        <p>2023 &copy; Victory Church. All Rights Reserved.</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function smoothScroll(target) {
+          const element = document.querySelector(target);
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+	<script>
+		function scrollToTop() {
+		  const eventsPage = document.querySelector('#sec1');
+		  eventsPage.scrollIntoView({ behavior: 'smooth' });
+		}
+	</script>
+    <script type="text/javascript" src="/js/navmenutoggle.js"></script> 
+</body>
+</html>

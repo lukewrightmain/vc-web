@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../styles/contact.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <title>Contact</title>
+    </head>
+<body>
+    <header>
+		<nav class="navbar">
+			<div class="logo">
+				<a href="#"><img src="../images/home-pictures/NewLogoAnchor.webp" alt="Victory Churhc Logo"></a>
+			</div>
+			<ul class="main-nav">
+        <li class="nav-item"><a href="../index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="visit.html">Visit</a></li>
+        <li class="nav-item"><a href="events.html">Events</a></li>
+        <li class="nav-item"><a href="media.html">Media</a></li>
+        <li class="nav-item"><a href="ministries.html">Ministries</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="summit.html">Summit</a></li>
+        <li class="nav-item"><a href="give.html">Give</a></li>
+			</ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+		</nav>
+	</header>
+    <main>
+        <div class="contact-wrapper">
+            <div class="contact-container">
+                <div class="sections" id="sec1" alt="1st">
+                    <img src="../images/ministries-pictures/ministry.png" class="bg-photo">
+                    <img src="../images/ministries-pictures/seperator2.png" class="bg-transition2">
+                    <div class="content-wrapper">
+                        <h1>
+                            Contact
+                        </h1>
+                        <div class="top-btn">
+                            <button class="btn-nav" onclick="smoothScroll('#sec2')">Contact Form</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sections" id="sec2" alt="2nd">
+                    <img src="../images/ministries-pictures/seperator.png" class="bg-transition">
+                    <div class="contactinfo-wrapper">
+                      <div class="contactinfo-container">
+                        <div class="infotext-container">
+                            <h3>CONTACT INFORMATION</h3>
+                            <a href="about.html#sec5">
+                                <div class="address-container">
+                                    <div class="address">
+                                      <h4>Waupaca Campus:</h4>
+                                      <p>E3443 Apple Tree Lane, Waupaca, WI 54981</p>
+                                    </div>
+                                    <div class="address">
+                                      <h4>New London Campus:</h4>
+                                      <p>1500 Handschke Drive, New London, WI 54961</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="phone-container">
+                              <h4>PHONE:</h4>
+                              <p>715-258-9661</p>
+                            </div>
+                            <div class="contact-container">
+                              <h4>CONTACTS:</h4>
+                              <p>Email: <a href="mailto:office@victorychurchwi.com">office@victorychurchwi.com</a></p>
+                              <p>Website: <a href="http://www.victorychurchwi.com">www.victorychurchwi.com</a></p>                              
+                            </div>
+                            <div class="hours-container">
+                              <h4>OFFICE HOURS:</h4>
+                              <div class="waupaca-hours">
+                                <p>Waupaca Campus Office Hours: 8:00 a.m. - 4:00 p.m. Monday through Thursday</p>
+                              </div>
+                              <div class="new-london-hours">
+                                <p>New London Office Hours: available by appointment only.</p>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <form id="visit-form" method="POST" action="https://formsubmit.co/d6b6639049541b6e8f7880e97b13378e">
+                              <label>Send Us A Message</label>
+                              <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" placeholder="Name" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="phone">Phone:</label>
+                                <input type="text" id="phone" name="phone" placeholder="Phone Number">
+                              </div>
+                              <div class="form-group">
+                                <label for="subject">Subject:</label>
+                                <input type="text" id="subject" name="subject" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" required></textarea>
+                              </div>
+                              <div class="send-btn">
+                              <button type="submit">Submit</button>
+                              </div>
+                            </form>
+                          </div>
+                      </div>
+                    </div>
+                    <img src="../images/ministries-pictures/seperator2.png" class="bg-transition">
+                </div>
+                <div class="sections" id="sec3" alt="3rd">
+                    <div class="ft-container">
+                      <div class="ft-nav">
+                        <ul>
+                          <li><a href="../index.html">Home</a></li>
+                          <li><a href="about.html">About</a></li>
+                          <li><a href="events.html">Events</a></li>
+                          <li><a href="ministries.html">Ministries</a></li>
+                          <li><a href="give.html">Give</a></li>
+                        </ul>
+                      </div>
+                      <div class="ft-scroll-top">
+                        <button class="btn-3" onclick="scrollToTop()">Scroll to Top</button>
+                      </div>
+                      <div class="ft-footer">
+                        <p>Website developed by Victory Church</p>
+                        <p>2023 &copy; Victory Church. All Rights Reserved.</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function smoothScroll(target) {
+          const element = document.querySelector(target);
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+	<script>
+		function scrollToTop() {
+		  const eventsPage = document.querySelector('#sec1');
+		  eventsPage.scrollIntoView({ behavior: 'smooth' });
+		}
+	</script>
+    <script type="text/javascript" src="/js/navmenutoggle.js"></script> 
+</body>
+</html>

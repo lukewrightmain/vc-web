@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/give.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Give</title>
+</head>
+<body>
+    <header>
+		<nav class="navbar">
+			<div class="logo">
+				<a href="#"><img src="../images/home-pictures/NewLogoAnchor.webp" alt="Victory Churhc Logo"></a>
+			</div>
+			<ul class="main-nav">
+        <li class="nav-item"><a href="../index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="visit.html">Visit</a></li>
+        <li class="nav-item"><a href="events.html">Events</a></li>
+        <li class="nav-item"><a href="media.html">Media</a></li>
+        <li class="nav-item"><a href="ministries.html">Ministries</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="summit.html">Summit</a></li>
+        <li class="nav-item"><a href="give.html">Give</a></li>
+			</ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+		</nav>
+	</header>
+    <main>
+        <div class="give-wrapper">
+            <div class="give-container">
+                <div class="sections" id="sec1" alt="1st">
+                    <img src="../images/give-pictures/give.png" class="bg-photo">
+                    <img src="../images/give-pictures/seperator2.png" class="bg-transition2">
+                    <div class="content-wrapper">
+                        <h1>
+                            Online Giving
+                        </h1>
+                        <p>Giving is easier than ever. Click the button below to make a one-time or recurring gift or donation to victory church.
+                        </p>
+                        <div class="top-btn">
+                            <a href="https://victorychurchwi.churchcenter.com/giving"><button class="btn-nav">Give Online</button></a>
+                        </div>
+                    </div>
+                </div>
+                <img src="../images/give-pictures/seperator.png" class="bg-transition">
+				<div class="sections" id="sec2" alt="ft">
+                    <div class="ft-container">
+                      <div class="ft-nav">
+                        <ul>
+                          <li><a href="../index.html">Home</a></li>
+                          <li><a href="about.html">About</a></li>
+                          <li><a href="events.html">Events</a></li>
+                          <li><a href="ministries.html">Ministries</a></li>
+                          <li><a href="give.html">Give</a></li>
+                        </ul>
+                      </div>
+                      <div class="ft-scroll-top">
+                        <button class="btn-3" onclick="scrollToTop()">Scroll to Top</button>
+                      </div>
+                      <div class="ft-footer">
+                        <p>Website developed by Victory Church</p>
+                        <p>2023 &copy; Victory Church. All Rights Reserved.</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function smoothScroll(target) {
+          const element = document.querySelector(target);
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+	<script>
+		function scrollToTop() {
+		  const eventsPage = document.querySelector('#sec1');
+		  eventsPage.scrollIntoView({ behavior: 'smooth' });
+		}
+	</script>
+  <script type="text/javascript" src="/js/navmenutoggle.js"></script> 
+</body>
+</html>
