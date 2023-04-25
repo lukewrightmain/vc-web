@@ -13,22 +13,27 @@
   <script type="text/javascript" src="./js/ytapi.js"></script>
 </head>
 <body>
-	<header>
-		<nav>
-			<div class="logo">
-				<a href="#"><img src="./images/home-pictures/NewLogoAnchor.webp" alt="Victory Churhc Logo"></a>
-			</div>
-			<ul class="main-nav">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="./pages/about.html">About</a></li>
-        <li><a href="./pages/visit.html">Visit</a></li>
-				<li><a href="./pages/events.html">Events</a></li>
-        <li><a href="./pages/media.html">Media</a></li>
-				<li><a href="./pages/ministries.html">Ministries</a></li>
-        <li><a href="./pages/contact.html">Contact</a></li>
-        <li><a href="./pages/summit.html">Summit</a></li>
-				<li><a href="./pages/give.html">Give</a></li>
-			</ul>
+  <header>
+	<nav class="navbar">
+		<div class="logo">
+			<a href="index.html"><img src="../images/home-pictures/NewLogoAnchor.webp" alt="Victory Churhc Logo"></a>
+		</div>
+	<ul class="main-nav">
+        	<li class="nav-item"><a href="index.html">Home</a></li>
+        	<li class="nav-item"><a href="./pages/about.html">About</a></li>
+        	<li class="nav-item"><a href="./pages/visit.html">Visit</a></li>
+        	<li class="nav-item"><a href="./pages/events.html">Events</a></li>
+        	<li class="nav-item"><a href="./pages/media.html">Media</a></li>
+        	<li class="nav-item"><a href="./pages/ministries.html">Ministries</a></li>
+        	<li class="nav-item"><a href="./pages/contact.html">Contact</a></li>
+        	<li class="nav-item"><a href="./pages/summit.html">Summit</a></li>
+        	<li class="nav-item"><a href="./pages/give.html">Give</a></li>
+	</ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
 		</nav>
 	</header>
 	
@@ -171,12 +176,13 @@
                 </div>
             </div>
         </div>
-        <script>
-          function scrollToTop() {
-            const homePage = document.querySelector('#home');
-            homePage.scrollIntoView({ behavior: 'smooth' });
-          }
-        </script>
 	</main>
+  <script>
+    function scrollToTop() {
+      const homePage = document.querySelector('#home');
+      homePage.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+  <script type="text/javascript" src="/js/navmenutoggle.js"></script> 
 </body>
 </html>
