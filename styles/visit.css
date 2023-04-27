@@ -119,17 +119,18 @@ nav {
     flex-direction: column;
     background-color: #ddd;
     width: 100%;
+    height: 100vh;
     text-align: center;
     transition: 0.3s;
   }
 
+
   .nav-item {
-    margin: 16px 0;
+    margin: 8px 0;
     display: flex;
     justify-content: center;
     text-align: center;
   }
-
   .main-nav.active{
     left: 0px;
     text-align: center;

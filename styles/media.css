@@ -25,8 +25,20 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+
+main {
+  margin-top: 70px; /* adjust the value to match the height of your header */
+}
+
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /*#################START################### */
@@ -119,12 +131,14 @@ nav {
     flex-direction: column;
     background-color: #ddd;
     width: 100%;
+    height: 100vh;
     text-align: center;
     transition: 0.3s;
   }
 
+
   .nav-item {
-    margin: 16px 0;
+    margin: 8px 0;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -152,98 +166,223 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
 }  
-  
-/* Set the background photo to fill the entire section */
-.bg-photo {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-
-.bg-transition{
-  position: relative;
-  top: 0;
-  width: 100vw;
-  height: auto;
-  z-index: 2;
-}
-.bg-transition2{
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-  height: auto;
-  z-index: 2;
-}
-
-.bg-transition3{
-  position: relative;
-  bottom: 0;
-  width: 100vw;
-  height: auto;
-  z-index: 2;
-}
-
-/* Add a content wrapper for the text content to overlay the image */
-.content-wrapper {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-/* Font Sizes */
-.content-wrapper h1{
-  color: #ddd;
-  font-size: 9em;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-}
-
-@media (max-width: 767px) {
-  .content-wrapper h1 {
-    font-size: 4.5em; /* decrease the font size */
-    line-height: 1.2; /* decrease the line-height */
-  }
-}
-
-.top-btn {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-  .top-btn {
-    flex-direction: column;
-    width: 250px; /* set a static width */
-    margin: 0 auto; /* center the buttons horizontally */
-    margin-bottom: 1rem;
-  }
-}
-
-.btn-nav {
-  border: none;
-  background-color: #0b3950;
-  color: white;
-  padding: 10px 40px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-nav:hover {
-  background-color: #fff;
-  color: #0b3950;
-  transform: scale(1.1);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-}
 
 /*###################End################### */
 /*---------------Sec1 STYLES--------------- */
 /*######################################### */
+
+/* live container */
+.live-container {
+  width: 85%;
+  height: 100%; /* set a specific height */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .live-container {
+    width: 100%;
+  }
+
+  .sections {
+    padding-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Live stream */
+.live-stream {
+  flex-basis: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+  border: 8px solid #093246;
+}
+
+.live-stream iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Set the section to be a flex container */
+#sec1 {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Wrapper styles */
+.vdsrm-wrapper {
+  width: 100vw;
+  height: 100%;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Videos container styles */
+.videos-container {
+  flex-basis: 62%;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.audio-container {
+  flex-basis: 50%;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.videos-container:hover {
+  transform: translateY(-5px);
+}
+
+.videos-container h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #093246;
+}
+
+/* Videos styles */
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  height: auto;
+}
+
+.video {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  width: calc((100% / 3) - 1rem); /* Change 3 to the number of videos per row */
+  aspect-ratio: 16/9;
+}
+
+.video:hover {
+  transform: translateY(-5px);
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .videos-container {
+    flex-basis: 80%;
+  }
+  
+  .videos {
+    flex-direction: column;
+  }
+  
+  .video {
+    display: flex;
+    width: 80%;
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .videos-container {
+    flex-basis: 95%;
+  }
+  
+  .videos {
+    flex-direction: column;
+  }
+  
+  .video {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+    aspect-ratio: 16/9;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .audio-container {
+    flex-basis: 50%;
+    margin: 1rem;
+  }
+}
+
+.audio-container:hover {
+  transform: translateY(-5px);
+}
+
+.audio-container h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #093246;
+}
+
+/* Audio files styles */
+.audio-files {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-files p{
+  text-align: center;
+}
+
+/* Style the placeholder image */
+#placeholder-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optionally, add some text to the placeholder image */
+#placeholder-image::after {
+  content: 'This video is unavailable';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: white;
+}
