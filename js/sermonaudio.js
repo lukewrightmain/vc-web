@@ -28,7 +28,7 @@ const generateAudioDivs = (audioContainer, sermonsFolder, audioFiles) => {
         <source src="${sermonsFolder}${audioFile}" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-      <p>${name}: ${title}</p>
+      
     `;
     audioContainer.appendChild(audioDiv);
   }
