@@ -19,16 +19,22 @@ fetch(sermonsFolder)
 const generateAudioDivs = (audioContainer, sermonsFolder, audioFiles) => {
   for (let i = 0; i < audioFiles.length; i++) {
     const audioFile = audioFiles[i];
-    const audioDiv = document.createElement('div');
-    audioDiv.classList.add('audio');
     const [name, titleWithExtension] = audioFile.split('-').map(str => str.replace('_', ' '));
     const title = titleWithExtension.replace(/\_/g, ' ').replace(/\..+$/, '').replace(/-/g, ':');
+
+    // Check if audio container already contains an audio element with the same file name
+    if (audioContainer.querySelector(`[data-audio-file="${audioFile}"]`)) {
+      continue;
+    }
+
+    const audioDiv = document.createElement('div');
+    audioDiv.classList.add('audio');
     audioDiv.innerHTML = `
-      <audio controls>
+      <audio controls data-audio-file="${audioFile}">
         <source src="${sermonsFolder}${audioFile}" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-      
+      <p>${name}: ${title}</p>
     `;
     audioContainer.appendChild(audioDiv);
   }
