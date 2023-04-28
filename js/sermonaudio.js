@@ -37,5 +37,7 @@ const generateAudioDivs = (audioContainer, sermonsFolder, audioFiles) => {
       <p>${name}: ${title}</p>
     `;
     audioContainer.appendChild(audioDiv);
+
+    debugger; // add this line to start the debugger
   }
 }
