@@ -159,6 +159,38 @@ main {
   height: auto;
 }
 
+.top-btn {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+.top-btn {
+  flex-direction: column;
+  width: 250px; /* set a static width */
+  margin: 0 auto; /* center the buttons horizontally */
+}
+}
+.btn-nav {
+  border: none;
+  background-color: #0b3950;
+  color: white;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-nav:hover {
+  background-color: #fff;
+  color: #0b3950;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
 /*##################END#################### */
 /*-----------MAIN CONTENT STYLES----------- */
 /*######################################### */
@@ -176,7 +208,7 @@ main {
 }
 
 .content-wrapper p{
-  color: #6cc8d4;
+  color: #a2d7df;
   font-size: 1.6em;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;

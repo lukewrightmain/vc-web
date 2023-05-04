@@ -329,8 +329,11 @@ p span.skyblue {
   margin: 1em;
   text-align: center;
 }
+.staff-item h3 {
+  color: #a2d7df;
+}
 
-.staff-item h3, a{
+.staff-item a{
     color: #6cc8d4;
 }
 

@@ -382,19 +382,7 @@ h1.lh-1.c-brand.fs-2.fw-600 {
   transform: rotateY(180deg);
 }
 
-.plan-event-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-}
 
-.plan-event-wrapper {
-    height: auto;
-}
-
-.plan-event-wrapper iframe {
-  height: 800px;
-}
 
 @media screen and (min-width: 768px) {
   .el-wrapper {
@@ -414,15 +402,6 @@ h1.lh-1.c-brand.fs-2.fw-600 {
     align-items: flex-start;
   }
 
-  .featured-events-wrapper {
-    flex-basis: calc(50% - 20px);
-    margin-right: 20px;
-  }
-
-  .plan-event-wrapper {
-    flex-basis: calc(50% - 20px);
-    margin-left: 20px;
-  }
 }
 
 /*#################START################### */
