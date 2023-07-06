@@ -1,0 +1,375 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+    background-color: #dcdcdc;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Section styles */
+.sections {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+
+main {
+  margin-top: 70px; /* adjust the value to match the height of your header */
+}
+
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*#################START################### */
+/*----------HEADER/NAVBAR STYLES----------- */
+/*######################################### */
+header {
+  background-color: #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 70px;
+  display: flex; /* add flex container to the header */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-right: 20px;
+}
+
+
+.main-nav li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+.main-nav li a:hover {
+    background-color: #e6e6e6;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #0b3950;
+}
+
+@media(max-width:915px){
+  .hamburger{
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .main-nav{
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #ddd;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+
+  .nav-item {
+    margin: 8px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main-nav.active{
+    left: 0px;
+    text-align: center;
+  }
+}
+
+/*##################END#################### */
+/*----------HEADER/NAVBAR STYLES----------- */
+/*######################################### */
+
+/*#################START################### */
+/*---------------Sec1 STYLES--------------- */
+/*######################################### */
+
+/* Set the section to be a flex container */
+#sec1 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}  
+
+/*###################End################### */
+/*---------------Sec1 STYLES--------------- */
+/*######################################### */
+
+/* live container */
+.live-container {
+  width: 85%;
+  height: 100%; /* set a specific height */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  justify-content: center;
+  color: #093246;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .live-container {
+    width: 100%;
+  }
+
+  .sections {
+    padding-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Live stream */
+.live-stream {
+  flex-basis: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+  border: 8px solid #093246;
+}
+
+.live-stream iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Set the section to be a flex container */
+#sec1 {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Wrapper styles */
+.vdsrm-wrapper {
+  width: 100vw;
+  height: 100%;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Videos container styles */
+.videos-container {
+  flex-basis: 62%;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.videos-container:hover {
+  transform: translateY(-5px);
+}
+
+.videos-container h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #093246;
+}
+
+/* Videos styles */
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  height: auto;
+}
+
+.video {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  width: calc((100% / 3) - 1rem); /* Change 3 to the number of videos per row */
+  aspect-ratio: 16/9;
+}
+
+.video:hover {
+  transform: translateY(-5px);
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .videos-container {
+    flex-basis: 80%;
+  }
+  
+  .videos {
+    flex-direction: column;
+  }
+  
+  .video {
+    display: flex;
+    width: 80%;
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .videos-container {
+    flex-basis: 95%;
+  }
+  
+  .videos {
+    flex-direction: column;
+  }
+  
+  .video {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+    aspect-ratio: 16/9;
+  }
+}
+
+.videos-container a{
+  justify-content: center;
+  display: flex;
+}
+
+.btn-nav {
+  border: none;
+  background-color: #0b3950;
+  color: white;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-nav:hover {
+  background-color: #fff;
+  color: #0b3950;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Style the placeholder image */
+#placeholder-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optionally, add some text to the placeholder image */
+#placeholder-image::after {
+  content: 'This video is unavailable';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: white;
+}

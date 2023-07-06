@@ -344,6 +344,32 @@ h1.lh-1.c-brand.fs-2.fw-600 {
   height: 102%;
   backface-visibility: hidden;
 }
+.f-evt-description {
+  display: flex;
+  text-align: center;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.f-evt-description {
+  display: none; /* Hide the description by default */
+}
+
+@media (max-width: 599px) {
+  .f-evt-description {
+    display: none; /* Hide the description */
+  }
+
+  .f-evt-button {
+    /* Add any desired styling for the buttons */
+    /* Example styles */
+    background-color: #093246;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+}
 
 .f-evt-title {
   color: #093246;

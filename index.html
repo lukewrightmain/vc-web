@@ -11,6 +11,7 @@
   <script src="https://apis.google.com/js/client.js?onload=onClientLoad"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="./js/ytapi.js"></script>
+  <link rel="icon" href="./images/fav-icon/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
@@ -21,8 +22,10 @@
 			<ul class="main-nav">
         <li class="nav-item"><a href="index.html">Home</a></li>
         <li class="nav-item"><a href="./pages/events.html">Events</a></li>
-        <li class="nav-item"><a href="./pages/media.html">Media</a></li>
+        <li class="nav-item"><a href="./pages/live.html">Live</a></li>
+        <li class="nav-item"><a href="./pages/news.html">News</a></li>
         <li class="nav-item"><a href="./pages/ministries.html">Ministries</a></li>
+        <li class="nav-item"><a href="./pages/summit.html">Summit</a></li>
         <li class="nav-item"><a href="./pages/give.html">Give</a></li>
 			</ul>
       <div class="hamburger">
@@ -34,25 +37,28 @@
 	</header>
 	
 	<main>
-        <div class="main-wrapper" id="home">
-		    <div class="main-content-container">
-                <div class="sections" id="sec1" alt="welcome-content">
-                    <img src="./images/home-pictures/crowd.png" class="bg-photo">
-                    <img src="./images/home-pictures/seperator2.png" class="bg-transition2">
-                    <div class="content-wrapper">
-                        <h1>
-                            Our Victory
-                        </h1>
-                        <p>CELEBRATE WITH VICTORY IN-PERSON OR ONLINE SUNDAY at</p>
-                        <p>8:30 & 10:15AM CST <span class="white">WAUPACA</span></p>
-                        <p>9:30AM CST <span class="white">NEW LONDON</span></p>
-                        <div class="top-btn">
-                          <a href="./pages/about.html"><button class="btn-nav">About</button></a>
-                          <a href="./pages/contact.html"><button class="btn-nav">Contact</button></a>
-                          <a href="./pages/visit.html"><button class="btn-nav">Visit</button></a>
+          <div class="main-wrapper" id="home">
+              <div class="main-content-container">
+                  <div class="sections" id="sec1" alt="welcome-content">
+                    <video src="./images/home-pictures/HeaderIntro.mp4" class="bg-photo" autoplay loop muted poster="./images/home-pictures/header.png"></video>
+                      <img src="./images/home-pictures/seperator2.png" class="bg-transition2">
+                      <div class="content-wrapper">
+                          <!--<h1>
+                              Our Victory
+                          </h1>
+                        -->
+                          <p>CELEBRATE WITH VICTORY IN PERSON OR ONLINE SUNDAY at</p>
+                          <p>8:30 & 10:15AM CST <span class="white">WAUPACA</span></p>
+                          <p>9:30AM CST <span class="white">NEW LONDON</span></p>
+                          <div class="top-btn">
+                              <a href="./pages/about.html"><button class="btn-nav">About</button></a>
+                              <a href="./pages/contact.html"><button class="btn-nav">Contact</button></a>
+                              <a href="./pages/visit.html"><button class="btn-nav">Visit</button></a>
+                          </div>
                       </div>
-                    </div>
-                </div>
+                  </div>
+              </div>
+            </div>
                 <div class="color-container">
                 <div class="sections" id="sec-mid">
                     <div class="mid-container">
@@ -73,7 +79,7 @@
                         </a>
                       </div>
                       <div class="mid-box">
-                        <a href="./pages/media.html">
+                        <a href="./pages/live.html">
                         <img src="./images/home-pictures/watchlive.png" alt="watchicon">
                         <h2>Watch Now</h2>
                         <p>Live Stream</p>
@@ -85,29 +91,20 @@
                 </div>
                 <div class="sections" id="sec2" alt="watch-content">
                   <div class="watch-container">
-                      <div class="row">
-                          <div class="col">
-                              <div class="watchbox">
-                                  <img src="" alt="Watch 1">
-                                  <p></p>
-                                  <button>Watch</button>
-                              </div>
-                          </div>
-                          <div class="col">
-                              <div class="watchbox">
-                                  <img src="" alt="Watch 2">
-                                  <p></p>
-                                  <button>Watch</button>
-                              </div>
-                          </div>
-                          <div class="col">
-                              <div class="watchbox">
-                                  <img src="" alt="Watch 3">
-                                  <p></p>
-                                  <button>Watch</button>
-                              </div>
-                          </div>
-                      </div>
+                    <div class="videos-container">
+                      <h2>Recent Videos</h2>
+                      <div class="videos">
+                        <div class="video">
+                            <iframe width="100%" height="360" src="https://www.youtube.com/embed?listType=playlist&list=UUkYXd4Evsjcnc9LXwiONQ6g&index=1" allowfullscreen></iframe>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="360" src="https://www.youtube.com/embed?listType=playlist&list=UUkYXd4Evsjcnc9LXwiONQ6g&index=2" allowfullscreen></iframe>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="360" src="https://www.youtube.com/embed?listType=playlist&list=UUkYXd4Evsjcnc9LXwiONQ6g&index=3" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    </div>
                   </div>
                     <div class="img-wrapper">
                       <img src="./images/home-pictures/seperator.png" class="bg-transition">
@@ -120,9 +117,7 @@
                     <div class="abt-container" id="abt-ctn">
                       <div class="row2">
                         <div class="col2">
-                          <a href="https://example.com">
                             <img src="./images/home-pictures/greet.png" alt="image-1">
-                          </a>
                         </div>
                         <div class="col2">
                           <h2>PLAN A VISIT</h2>
@@ -146,7 +141,7 @@
                         </div>
                         <div class="col2">
                           <h2>CONTACT US</h2>
-                          <p>📞 (715) 258-9661<br>📧 victorychurchwi@gmail.com<br>📍Waupaca & New London, WI</p>
+                          <p>📞 (715) 258-9661<br>📧 office@victorychurchwi.com<br>📍Waupaca & New London, WI</p>
                           <a href="./pages/about.html#sec5"><button class="btn-3">More Info</button></a>
                         </div>
                       </div>
@@ -176,7 +171,6 @@
                 </div>
                 </div>
             </div>
-        </div>
 	</main>
   <script>
     function scrollToTop() {

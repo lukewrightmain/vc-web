@@ -248,7 +248,12 @@ p span.skyblue {
   display: flex;
   flex-direction: column;
   text-align: center;
+  background: rgba(56, 56, 56, 0.274); /* Use an rgba color for the background with an alpha value */
+  border-radius: 10px; /* Adjust the value to control the roundness */
+  padding: 20px; /* Add some padding for spacing */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
 }
+
 
 @media (max-width: 767px) {
   .content-wrapper h1 {
@@ -260,6 +265,143 @@ p span.skyblue {
 /*##################END#################### */
 /*-----------Section One |STYLES----------- */
 /*######################################### */
+
+/* Videos container styles */
+.videos-container {
+  flex-basis: 62%;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.videos-container:hover {
+  transform: translateY(-5px);
+}
+
+.videos-container h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #093246;
+}
+
+/* Videos styles */
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  height: auto;
+}
+
+.video {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  width: calc((100% / 3) - 1rem); /* Change 3 to the number of videos per row */
+  aspect-ratio: 16/9;
+}
+
+.video:hover {
+  transform: translateY(-5px);
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media screen and (max-width: 1800px) {
+  .videos-container {
+    flex-basis: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    overflow-x: scroll;
+  }
+  
+  .videos {
+    flex-direction: column;
+  }
+  
+  .video {
+    display: flex;
+    width: 80%;
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .videos-container {
+    flex-basis: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    overflow-x: scroll;
+  }
+  
+  .videos {
+    flex-direction: column;
+  }
+  
+  .video {
+    display: flex;
+    width: 80%;
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .videos-container {
+    flex-basis: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    overflow-x: scroll;
+  }
+  
+  .videos {
+    flex-direction: column;
+  }
+  
+  .video {
+    display: flex;
+    width: 80%;
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .videos-container {
+    flex-basis: 95%;
+    height: 50%;
+    overflow-x: scroll;
+  }
+  
+  .videos {
+    flex-direction: column;
+  }
+  
+  .video {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+    aspect-ratio: 16/9;
+  }
+}
+
 
 /*#################START################### */
 /*-----------Transition-Sections----------- */
@@ -376,7 +518,8 @@ p span.skyblue {
   align-items: center;
   z-index: 2;
 }
-  
+
+
 .row {
   height: auto;
   display: flex;
@@ -448,7 +591,7 @@ p span.skyblue {
 @media (max-width: 1023px) {
   .col {
     flex-basis: 50%; /* set the width to 50% */
-    margin: 5px; /* reduce the margin */
+    margin: 25px; /* reduce the margin */
     max-width: calc(50% - 10px);
   }
   .watchbox {
