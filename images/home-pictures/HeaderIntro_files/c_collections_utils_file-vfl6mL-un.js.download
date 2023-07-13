@@ -1,0 +1,2 @@
+define(["exports","./c_file_store_utils","./e_ui_page_files_router"],(function(e,i,t){"use strict";function n(e){return i.isBrowseFile(e)?t.filename(e.fq_path):t.filename(e.filename)}function r(e){return t.file_extension(n(e))}e.formatFileSize=function(e){const i=e>1073741824?1:0;return t.format_bytes(e,i)},e.getFileExtension=r,e.getFileName=n,e.getFileThumbnail=function(e){var i;return null!==(i=e.thumbnail_url_tmpl)&&void 0!==i?i:void 0},e.getFileType=function(e){return t.ExtensionCategories[r(e)]||"FILE"}}));
+//# sourceMappingURL=c_collections_utils_file.js-vfliWpjc0.map

@@ -1,0 +1,2 @@
+define(["exports"],(function(r){"use strict";r.error=function(r,e,o){const{isRetriable:t,maxRetries:i,isNetworkError:s}=null!=o?o:{};return{isError:!0,error:r,errorCode:e,isRetriable:t,maxRetries:i,isNetworkError:s}},r.ok=function(r){return{isError:!1,result:r}}}));
+//# sourceMappingURL=c_file_uploader_result_type.js-vfl8dVleA.map

@@ -1,0 +1,2 @@
+define(["exports","./c_file_store_utils","./c_core_browser_detection"],(function(e,t,n){"use strict";const o=new Set(["jpg","jpeg","png"]);e.VALID_PHOTO_FILE_EXTENSIONS=o,e.showEditPlugin=function(e,i){return!!e&&((!i||0!==i.canDownloadRoles.length)&&(!!o.has(t.getExtension(e))&&!n.is_mobile_or_tablet(navigator.userAgent)))}}));
+//# sourceMappingURL=c_photo-editor_plugin_show-edit-plugin.js-vfl9xH4PK.map

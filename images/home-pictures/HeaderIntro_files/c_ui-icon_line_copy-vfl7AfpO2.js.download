@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.CopyLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M7 4.5V17h12.5V4.5H7Zm11 11H8.5V6H18v9.5Z",fill:"currentColor"}),t.react.exports.createElement("path",{d:"M5.5 7.5H4V20h12.5v-1.5h-11v-11Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_copy.js-vflGrIRdJ.map

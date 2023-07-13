@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.CheckmarkCircleFill=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M12 4c-5.159 0-8 2.841-8 8s2.841 8 8 8 8-2.841 8-8-2.841-8-8-8Zm-1 11.56-3.03-3.03 1.06-1.06L11 13.44l3.97-3.97 1.06 1.06L11 15.56Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_fill_checkmark-circle.js-vflRl1-Kz.map

@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.FileLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"m17.341 6.03-1.372-1.37A2.236 2.236 0 0 0 14.38 4H5.5v16H18V7.621a2.264 2.264 0 0 0-.659-1.59ZM7 18.5v-13h7V8h2.5v10.5H7Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_file.js-vfl6_q5Pz.map

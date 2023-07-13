@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.ComputerPictogram=e=>t.react.exports.createElement("svg",{viewBox:"0 0 64 64",fill:"none",...e},t.react.exports.createElement("path",{d:"M8 11v26a6.007 6.007 0 0 0 6 6h16v6h-8v4h20v-4h-8v-6h16a6.007 6.007 0 0 0 6-6V11H8Zm44 26a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V15h40v22Z",fill:"currentColor"}),t.react.exports.createElement("path",{d:"M38 21H26v12h12V21Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_assets_pictogram_computer.js-vflUlt8oy.map

@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.CropLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M7.5 2.5H6V6H2.5v1.5h14V15H18V6H7.5V2.5Z",fill:"currentColor"}),t.react.exports.createElement("path",{d:"M21.5 16.5h-14V9H6v9h10.5v3.5H18V18h3.5v-1.5Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_crop.js-vfle_fTEw.map

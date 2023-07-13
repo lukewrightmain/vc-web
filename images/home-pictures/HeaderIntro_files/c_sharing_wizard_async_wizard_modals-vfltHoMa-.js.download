@@ -1,0 +1,2 @@
+define(["require","exports"],(function(n,i){"use strict";function r(i){new Promise((function(i,r){n(["./c_sharing_wizard_wizard_modals"],i,r)})).then(i)}i.asyncShareExistingFolder=function(n,i,e,o){r((r=>{r.shareExistingFolder(n,i,e,o)}))},i.asyncShowShareAFolderWizardModal=function(n,i,e=!1,o,a,s){r((r=>{const d=r.showShareAFolderWizardModal(n,e,o,a,s);i&&i(d)}))}}));
+//# sourceMappingURL=c_sharing_wizard_async_wizard_modals.js-vflmI2Yt_.map

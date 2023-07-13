@@ -1,0 +1,2 @@
+define(["require","exports","./e_edison","./e_ui_page_files_router","./c_core_notify"],(function(e,o,i,r,t){"use strict";o.prewarmFolderDialog=function(){new Promise((function(o,i){e(["./c_folder_dialog"],o,i)})).then((()=>{t.require_css("/static/metaserver/static/css/react/folder_picker-vflhBHl9O.css")}))},o.showFolderDialog=function(o){new Promise((function(o,i){e(["./c_folder_dialog"],o,i)})).then((({FolderDialog:e})=>{r.mountModal(i.React$1.createElement(e,Object.assign({},o)))}))}}));
+//# sourceMappingURL=c_folder_dialog_async.js-vfleKZZ-i.map

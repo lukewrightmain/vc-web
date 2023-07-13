@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,l){"use strict";e.CircleSmallFilledFill=e=>l.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},l.react.exports.createElement("path",{d:"M12 8c-2.617 0-4 1.383-4 4s1.383 4 4 4 4-1.383 4-4-1.383-4-4-4Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_fill_circle-small-filled.js-vflcgXDCI.map

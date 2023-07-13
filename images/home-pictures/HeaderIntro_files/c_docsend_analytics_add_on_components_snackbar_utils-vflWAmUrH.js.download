@@ -1,0 +1,2 @@
+define(["exports","./e_edison","./e_ui_page_files_router","./c_core_i18n"],(function(e,a,t,s){"use strict";e.showSnackbar=(e,n,i=5e3)=>{t.Snackbar.update(a.React$1.createElement(t.Snackbar,{id:"docsend-analytics-add-on-snackbar",title:n,closeButtonText:s.intl.formatMessage({id:"UuZQQK",defaultMessage:"Close"}),variant:e,timeoutDelayMs:i,"data-testid":"snackbar"}))}}));
+//# sourceMappingURL=c_docsend_analytics_add_on_components_snackbar_utils.js-vflx3rfbt.map

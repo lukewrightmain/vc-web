@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.MobileLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M7 4v16h10.5V4H7Zm9 14.5H8.5v-13H16v13Z",fill:"currentColor"}),t.react.exports.createElement("path",{d:"M12.25 17a1.161 1.161 0 0 0 1.25-1.25 1.161 1.161 0 0 0-1.25-1.25A1.161 1.161 0 0 0 11 15.75 1.161 1.161 0 0 0 12.25 17Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_mobile.js-vfl3RF4jz.map

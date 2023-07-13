@@ -1,0 +1,2 @@
+define(["exports"],(function(n){"use strict";n.PAP_Shown_PublishEntrypoint=function(n){return{class:"publish_modal",action:"shown",object:"publish_entrypoint",properties:n}}}));
+//# sourceMappingURL=c_pap-events_publish_modal_shown_publish_entrypoint.js-vflLiK8XF.map

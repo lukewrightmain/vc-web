@@ -1,0 +1,195 @@
+define("metaserver/static/js/ccpa_iframe/api",["require","exports","metaserver/static/js/api_v2/noauth_client","metaserver/static/js/api_v2/user_client","metaserver/static/js/privacy_consent/stats","metaserver/static/js/clean/active_user","metaserver/static/js/ccpa_iframe/api_helpers"],(function(e,t,n,r,o,a,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.submitDNSSettings=t.resendEmail=t.CCPA_ACTION_SOURCE=void 0;const s=`Basic ${btoa("bvfyoawupclb746:6pv9whg6d9wh8xm")}`;(function(e){e.USER_INPUT="UI",e.COOKIE_AUTO="COOKIE_AUTO",e.GPC_UI="GPC_UI",e.GPC_AUTO="GPC_AUTO"})(t.CCPA_ACTION_SOURCE||(t.CCPA_ACTION_SOURCE={}));t.resendEmail=(e,t,l,c)=>{if(!e)return void t(!1,"");const d=(0,a.getActiveUser)(),m=(0,i.fillInLoggingContext)(l);if(o.PrivacyConsentStats.logCounter(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.RESEND_EMAIL,null)),(0,i.isSignedIn)()&&d){const e=(new r.UserApiV2Client).ns("ccpa"),n=(0,i.getUserEmailsFromViewer)();e.rpc("resend_dns_verification_email",{raw_email_addresses:n,logging_context:m},{subjectUserId:d.id}).then(e=>{if(t(e.success,""),!e.success)throw new Error("Resend email failed")}).catch(e=>{t(!1,""),o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.RESEND_EMAIL_ERROR,o.CCPAEventErrorType.UNSUCCESSFUL_RESPONSE),e)})}else if((0,i.shouldUseAppAuth)()){if(!c)return t(!1,""),void o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.RESEND_EMAIL_ERROR,o.CCPAEventErrorType.CSRF_TOKEN_ERROR),new Error("csrf token not found"));((e,t,n,r)=>{fetch("https://api.dropboxapi.com/2/ccpa/resend_dns_verification_email",{headers:{"content-type":"text/plain; charset=dropbox-cors-hack",authorization:s},method:"POST",body:JSON.stringify({raw_email_addresses:e,logging_context:r,csrf_token:t})}).then(e=>{if(!e.ok)throw new Error(e.statusText);return e.json()}).then(e=>{if(n(e.success,""),!e.success)throw new Error("Resend email with app auth failed")}).catch(e=>{n(!1,""),o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.RESEND_EMAIL_ERROR,o.CCPAEventErrorType.UNSUCCESSFUL_RESPONSE),e)})})(e,c,t,m)}else{(new n.NoAuthApiV2Client).ns("ccpa").rpc("resend_dns_verification_email",{raw_email_addresses:e,logging_context:m},{}).then(e=>{if(t(e.success,""),!e.success)throw new Error("Resend email failed")}).catch(e=>{t(!1,""),o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.RESEND_EMAIL_ERROR,o.CCPAEventErrorType.UNSUCCESSFUL_RESPONSE),e)})}};t.submitDNSSettings=(e,t,n,r,a,s,d)=>{e?(o.PrivacyConsentStats.logCounter(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_IN,null)),l(t,n,r,a,s,d)):(o.PrivacyConsentStats.logCounter(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_OUT,null)),c(t,n,r,a,s,d))};const l=(e,t,l,c,d,m)=>{const g=(0,a.getActiveUser)(),p=(0,i.fillInLoggingContext)(l);if((0,i.isSignedIn)()&&g){(new r.UserApiV2Client).ns("ccpa").rpc("opt_in_dns",Object.assign({logging_context:p,ccpa_token:c},m),{subjectUserId:g.id}).then(t=>{if(e(t.success),!t.success)throw new Error("Opt in DNS failed")}).catch(t=>{e(!1),o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_IN_ERROR,o.CCPAEventErrorType.UNSUCCESSFUL_RESPONSE),t)})}else if((0,i.shouldUseAppAuth)()){if(!d)return e(!1),void o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_IN_ERROR,o.CCPAEventErrorType.CSRF_TOKEN_ERROR),new Error("csrf token not found"));((e,t,n,r,a,l)=>{fetch("https://api.dropboxapi.com/2/ccpa/opt_in_dns",{headers:{"content-type":"text/plain; charset=dropbox-cors-hack",authorization:s},method:"POST",body:JSON.stringify(Object.assign({raw_email_address:n,logging_context:r,ccpa_token:a,csrf_token:t},l))}).then(e=>{if(!e.ok)throw new Error(e.statusText);return e.json()}).then(t=>{if(e(t.success),!t.success)throw new Error("Opt in DNS with app auth failed")}).catch(t=>{e(!1),o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_IN_ERROR,o.CCPAEventErrorType.UNSUCCESSFUL_RESPONSE),t)})})(e,d,t,p,c,m)}else{(new n.NoAuthApiV2Client).ns("ccpa").rpc("opt_in_dns",Object.assign({raw_email_address:t,logging_context:p,ccpa_token:c},m),{}).then(t=>{if(e(t.success),!t.success)throw new Error("Opt in DNS failed")}).catch(t=>{e(!1),o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_IN_ERROR,o.CCPAEventErrorType.UNSUCCESSFUL_RESPONSE),t)})}},c=(e,t,l,c,d,m)=>{const g=(0,a.getActiveUser)(),p=(0,i.fillInLoggingContext)(l);if((0,i.isSignedIn)()&&g){(new r.UserApiV2Client).ns("ccpa").rpc("opt_out_dns",Object.assign({logging_context:p,ccpa_token:c},m),{subjectUserId:g.id}).then(t=>{if(e(t.success),!t.success)throw new Error("Opt out DNS failed")}).catch(t=>{e(!1),o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_OUT_ERROR,o.CCPAEventErrorType.UNSUCCESSFUL_RESPONSE),t)})}else if((0,i.shouldUseAppAuth)()){if(!d)return e(!1),void o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_OUT_ERROR,o.CCPAEventErrorType.CSRF_TOKEN_ERROR),new Error("csrf token not found"));((e,t,n,r,a,l)=>{fetch("https://api.dropboxapi.com/2/ccpa/opt_out_dns",{headers:{"content-type":"text/plain; charset=dropbox-cors-hack",authorization:s},method:"POST",body:JSON.stringify(Object.assign({raw_email_address:n,logging_context:r,ccpa_token:a,csrf_token:t},l))}).then(e=>{if(!e.ok)throw new Error(e.statusText);return e.json()}).then(t=>{if(e(t.success),!t.success)throw new Error("Opt out DNS with app auth failed")}).catch(t=>{e(!1),o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_OUT_ERROR,o.CCPAEventErrorType.UNSUCCESSFUL_RESPONSE),t)})})(e,d,t,p,c,m)}else{(new n.NoAuthApiV2Client).ns("ccpa").rpc("opt_out_dns",Object.assign({raw_email_address:t,logging_context:p,ccpa_token:c},m),{}).then(t=>{if(e(t.success),!t.success)throw new Error("Opt out DNS failed")}).catch(t=>{e(!1),o.PrivacyConsentStats.logError(o.PrivacyConsentAmpMetrics.EVENTS,(0,i.getLogTags)(o.CCPAEvent.DNS_OPT_OUT_ERROR,o.CCPAEventErrorType.UNSUCCESSFUL_RESPONSE),t)})}}})),define("metaserver/static/js/ccpa_iframe/api_helpers",["require","exports","tslib","metaserver/static/js/clean/viewer","metaserver/static/js/privacy_consent/stats","metaserver/static/js/modules/constants/page_load"],(function(e,t,n,r,o,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.fillInLoggingContext=t.getLogTags=t.getUserEmailsFromViewer=t.shouldUseAppAuth=t.isSignedIn=void 0,a=n.__importStar(a);t.isSignedIn=()=>r.Viewer.get_viewer().is_signed_in;t.shouldUseAppAuth=()=>{let e=!0;try{""===Reflect.get(document.constructor.prototype,"cookie",document)&&(e=!1)}catch(t){e=!1}return!e};t.getUserEmailsFromViewer=()=>r.Viewer.get_viewer().get_users().map(e=>e.email);t.getLogTags=(e,n)=>({event_name:e,is_signed_in:(0,t.isSignedIn)()?o.CCPAUserStateTags.SIGNED_IN:o.CCPAUserStateTags.SIGNED_OUT,should_use_app_auth:(0,t.shouldUseAppAuth)()?o.CCPAUserStateTags.SHOULD_USE_APP_AUTH:o.CCPAUserStateTags.SHOULD_NOT_USE_APP_AUTH,error_type:null==n?"null":n});t.fillInLoggingContext=e=>{const t=e&&e.sessionId?e.sessionId:a.SESSION_ID;return{user_agent:null==e?void 0:e.userAgent,session_id:t,anon_ip:null==e?void 0:e.anonIp,locale_user_selected:null==e?void 0:e.localeUserSelected,locale_browser_header:null==e?void 0:e.localeBrowserHeader,country:null==e?void 0:e.country,ua_browser_name:null==e?void 0:e.uaBrowserName,ua_browser_version:null==e?void 0:e.uaBrowserVersion,ua_os_name:null==e?void 0:e.uaOsName,ua_os_version:null==e?void 0:e.uaOsVersion}}})),define("metaserver/static/js/ccpa_iframe/ccpa_preferences",["require","exports","tslib","metaserver/static/js/ccpa_iframe/dns_enrollment_state","metaserver/static/js/ccpa_iframe/dns_form","react","@dropbox/dig-icons","@dropbox/dig-components/banner","@dropbox/dig-icons/assets","@dropbox/dig-components/typography","metaserver/static/js/core/i18n","metaserver/static/js/ccpa_iframe/preferences_slider","metaserver/static/js/ccpa_iframe/preferences_category"],(function(e,t,n,r,o,a,i,s,l,c,d,m,g){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.CCPAPreferences=t.CCPAPreferencesVariant=void 0,a=n.__importStar(a);const p=d.intl.formatMessage({id:"JFt8fI",defaultMessage:"Global Privacy Control enabled. Disable to modify cookie categories."}),u=d.intl.formatMessage({id:"B/scGc",defaultMessage:"Do not sell or share my information"}),E=d.intl.formatMessage({id:"/BLodS",defaultMessage:"Do not sell or share my personal information is now active. You may close this window."}),f=d.intl.formatMessage({id:"5g1q9D",defaultMessage:'You have successfully unenrolled in CCPA\'s "Do not sell or share my personal information". You may now close this window.'}),C=()=>a.createElement("div",null,a.createElement("span",{className:"gpc-info"},a.createElement(i.UIIcon,{className:"gpc-info-icon",src:l.InfoLine}),a.createElement("label",{id:"gpc-label",className:"gpc-label",htmlFor:"gpc"},p)));C.displayName="GPCInfo";const _=e=>{const t=d.intl.formatMessage({id:"brKQ8K",defaultMessage:'Do not sell or share my personal data to third-parties when I visit this website. Enabling this option will disable all cookies except for those classified as "strictly necessary". Visit our <button>Cookie FAQ page</button> for more information.'},{button:t=>a.createElement("button",{id:"cookie-faq-link",onClick:e.onCookieFAQLinkClick},t)});return a.createElement(a.Fragment,null,a.createElement(g.PreferencesCategory,{checked:e.checked,disabled:e.disabled,onChange:e.onChange,title:u,id:"dns",blurb:t,buttonLabel:"",onCookieFAQLinkClick:e.onCookieFAQLinkClick,titleClassName:"dns-label",descClassName:"dns-blurb",gdprCount:0}),e.children)};_.displayName="CCPAPreferencesWithGDPR";const b=e=>{const t=d.intl.formatMessage({id:"brKQ8K",defaultMessage:'Do not sell or share my personal data to third-parties when I visit this website. Enabling this option will disable all cookies except for those classified as "strictly necessary". Visit our <button>Cookie FAQ page</button> for more information.'},{button:t=>a.createElement("button",{id:"cookie-faq-link",onClick:e.onCookieFAQLinkClick},t)});return a.createElement("div",{className:""},a.createElement(i.UIIcon,{src:l.DropboxLine,size:"large"}),a.createElement(c.Title,{className:"dns-label"},u),a.createElement("div",{style:{display:"flex",marginBottom:"24px"}},a.createElement("label",{id:"dns-blurb",className:"dns-blurb",htmlFor:"dns",style:{marginRight:"40px"}},t),a.createElement(m.PreferencesSlider,{checked:e.checked,disabled:e.disabled,onChange:e.onChange,labelledby:"dns-label",describedby:"dns-blurb",id:"dns",name:"dns",gdprCount:0})),e.children)};var S;b.displayName="CCPAPreferencesCCPAOnly",(function(e){e[e.GDPR_EMBEDDED=0]="GDPR_EMBEDDED",e[e.CCPA_ONLY=1]="CCPA_ONLY"})(S=t.CCPAPreferencesVariant||(t.CCPAPreferencesVariant={}));t.CCPAPreferences=e=>{const t=a.createElement(o.DNSForm,{enrollmentState:e.enrollmentState,email:e.email,handleEmailChange:e.handleEmailChange,userEmails:e.userEmails,verifiedEmails:e.verifiedEmails,unverifiedEmails:e.unverifiedEmails});let n;n=e.displayVariant===S.GDPR_EMBEDDED?a.createElement(_,{checked:e.checked,disabled:e.disabled,onChange:e.onChange,onCookieFAQLinkClick:e.onCookieFAQLinkClick},t):a.createElement(b,{checked:e.checked,disabled:e.disabled,onChange:e.onChange,onCookieFAQLinkClick:e.onCookieFAQLinkClick},t);const i=e.enrollmentState===r.DNSEnrollmentState.EnrollmentPendingEmailVerificationSent||e.enrollmentState===r.DNSEnrollmentState.EnrollmentPendingAccountVerificationSent;return a.createElement(a.Fragment,null,e.gpcEnabled&&a.createElement(C,null),n,e.isFlowComplete&&a.createElement(s.Banner,{type:"attention"},a.createElement(s.Banner.Message,null,i?E:f)))},t.CCPAPreferences.displayName="CCPAPreferences"})),define("metaserver/static/js/ccpa_iframe/consent_banner",["require","exports","tslib","react","styled-components","metaserver/static/js/core/i18n"],(function(e,t,n,r,o,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.ConsentBanner=t.BannerComponentIDs=void 0,r=n.__importStar(r),o=n.__importDefault(o),t.BannerComponentIDs={bannerContainer:"ccpa_consent_banner",acceptAllCookiesButton:"accept_all_cookies_button",declineCookiesButton:"decline_cookies_button"};t.ConsentBanner=e=>{const n=a.intl.formatMessage({id:"Z0ME6Q",defaultMessage:"We use cookies to provide, improve, protect and promote our services. Visit our <privacy>Privacy Policy</privacy> and <faq>Privacy Policy FAQs</faq> to learn more. You can manage your personal preferences, including your ‘Do not sell or share my personal data to third parties’ setting in our <tool>Cookie Consent Tool</tool>."},{privacy:t=>r.createElement("button",{id:"privacy-page-link",onClick:e.onPrivacyPageLinkClick},t),faq:t=>r.createElement("button",{id:"privacy-policy-faq-link",onClick:e.onPrivacyPolicyFaqLinkClick},t),tool:t=>r.createElement("button",{id:"manage-consent-cookies-link",onClick:e.onSettingsClick},t)});return r.createElement(r.Fragment,null,r.createElement(m,{id:t.BannerComponentIDs.bannerContainer},r.createElement(g,null,n),r.createElement(p,Object.assign({},e,{id:t.BannerComponentIDs.declineCookiesButton,onClick:n=>{e.onClick(t.BannerComponentIDs.declineCookiesButton)}}),i),r.createElement(u,Object.assign({},e,{id:t.BannerComponentIDs.acceptAllCookiesButton,onClick:n=>{e.onClick(t.BannerComponentIDs.acceptAllCookiesButton)}}),s)))},t.ConsentBanner.displayName="ConsentBanner";const i=a.intl.formatMessage({id:"TrrEUN",defaultMessage:"Decline"}),s=a.intl.formatMessage({id:"OyAa/t",defaultMessage:"Accept All"}),l=o.default.div`
+  width: auto;
+  display: flex;
+  flex: 1 1 0%;
+  background: rgb(247, 245, 242);
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  padding: 24px;
+  z-index: 10001;
+  box-sizing: border-box;
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 10px;
+  text-size-adjust: 100%;
+  visibility: visible;
+
+  @media (max-width: 601px) {
+    flex-direction: column;
+    padding: 0px 24px;
+  }
+`,c=o.default.div`
+  width: auto;
+  display: flex;
+  flex: 1 1 0%;
+  background: rgb(247, 245, 242);
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  padding: 24px;
+  z-index: 10001;
+  box-sizing: border-box;
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 10px;
+  text-size-adjust: 100%;
+  visibility: visible;
+  top: 0px;
+
+  @media (max-width: 601px) {
+    flex-direction: column;
+    padding: 0px 24px;
+  }
+`,d=navigator.userAgent.toLowerCase(),m=d.includes("iphone")||d.includes("ipod")?c:l,g=o.default.div`
+  margin-right: 48px;
+  color: rgb(30, 25, 25);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  width: 100%;
+  align-self: center;
+
+  @media (max-width: 601px) {
+    padding: 24px 0px;
+    margin-right: 0px;
+  }
+`,p=o.default.button`
+  display: flex;
+  flex-flow: column nowrap;
+  flex-shrink: 0;
+  justify-content: center;
+  align-self: center;
+  border: 1px solid rgb(30, 25, 25);
+  background: rgb(247, 245, 242);
+  color: rgb(30, 25, 25);
+  padding: 9px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 26px;
+  order: 2;
+  &:hover {
+    background-color: var(--color_primary--light) !important;
+    border: 1px solid var(--color_primary--light) !important;
+    color: #fff !important;
+  }
+  @media (max-width: 601px) {
+    width: 100%;
+    margin: 5px;
+    align-items: center;
+  }
+`,u=o.default.button`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-self: center;
+  flex-shrink: 0;
+  border: 1px solid rgb(30, 25, 25);
+  color: rgb(250, 250, 250);
+  background: rgb(30, 25, 25);
+  padding: 9px 20px;
+  cursor: pointer;
+  margin: 0px 0px 0px 16px;
+  font-size: 16px;
+  line-height: 26px;
+  order: 3;
+  &:hover {
+    background-color: var(--color_primary--light) !important;
+    border: 1px solid var(--color_primary--light) !important;
+    color: #fff !important;
+  }
+  @media (max-width: 601px) {
+    width: 100%;
+    margin: 5px;
+    align-items: center;
+  }
+`})),define("metaserver/static/js/ccpa_iframe/dns_cookie",["require","exports"],(function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.buildDNSCookie=t.clearDNSCookie=t.saveDNSCookie=t.readDNSCookie=t.DEFAULT_DNS_DURATION_MONTHS=void 0;t.DEFAULT_DNS_DURATION_MONTHS=12;const n="dropbox.com".split(".").length-1;t.readDNSCookie=()=>{const e=document.cookie.split(";").map(e=>e.trim()).map(e=>e.split("=")).filter(([e,t])=>"__Secure-dbx_do_not_sell"===e);if(!e||e.length<1||e[0].length<2)return;const t=e[0][1];return JSON.parse(t)};t.saveDNSCookie=e=>{const t={"__Secure-dbx_do_not_sell":JSON.stringify(e).replace(/[;]|[^ -~]/g,e=>"\\u"+(65536+e.charCodeAt(0)).toString(16).substr(1)),domain:"dropbox.com",path:"/",expires:new Date(e.expireDate).toUTCString(),samesite:"lax",secure:""},n=Object.keys(t).map(e=>t[e]?`${e}=${t[e]}`:`${e}`);document.cookie=n.join(";")};t.clearDNSCookie=()=>{const e={"__Secure-dbx_do_not_sell":"",domain:"dropbox.com",path:"/",expires:(new Date).toUTCString(),samesite:"lax",secure:""},t=Object.keys(e).map(t=>void 0!==e[t]?`${t}=${e[t]}`:`${t}`);document.cookie=t.join(";")};t.buildDNSCookie=()=>{const e=new Date;return e.setMonth(e.getMonth()+t.DEFAULT_DNS_DURATION_MONTHS),{numDots:n,expireDate:e.toISOString(),optInToDNS:!0}}})),define("metaserver/static/js/ccpa_iframe/dns_enrollment_state",["require","exports"],(function(e,t){"use strict";var n;Object.defineProperty(t,"__esModule",{value:!0}),t.isFlowComplete=t.areSettingsSaved=t.shouldUnenrollLocally=t.shouldEnrollLocally=t.isGPCUserResetState=t.isUnenrollmentPendingUIConfirmation=t.isEnrollmentPendingUIConfirmation=t.isEnrollmentSelected=t.DNSEnrollmentState=void 0,(function(e){e.NotEnrolled="NOT_ENROLLED",e.EnrollmentPendingEmailConfirmation="ENROLLMENT_PENDING_EMAIL_CONFIRMATION",e.EnrollmentPendingAccountConfirmation="ENROLLMENT_PENDING_ACCOUNT_CONFIRMATION",e.EnrolledEmail="ENROLLED_EMAIL",e.EnrolledAccount="ENROLLED_ACCOUNT",e.UnenrollmentPendingEmailUIConfirmation="UNENROLLMENT_PENDING_EMAIL_UI_CONFIRMATION",e.UnenrollmentPendingAccountUIConfirmation="UNENROLLMENT_PENDING_ACCOUNT_UI_CONFIRMATION",e.EnrollmentPendingEmailUIConfirmation="ENROLLMENT_PENDING_EMAIL_UI_CONFIRMATION",e.EnrollmentPendingAccountUIConfirmation="ENROLLMENT_PENDING_ACCOUNT_UI_CONFIRMATION",e.EnrollmentPendingEmailVerificationSent="ENROLLMENT_PENDING_EMAIL_VERIFICATION_SENT",e.EnrollmentPendingAccountVerificationSent="ENROLLMENT_PENDING_ACCOUNT_VERIFICATION_SENT"})(n=t.DNSEnrollmentState||(t.DNSEnrollmentState={}));t.isEnrollmentSelected=e=>e===n.EnrollmentPendingEmailVerificationSent||e===n.EnrollmentPendingAccountVerificationSent||e===n.EnrollmentPendingEmailUIConfirmation||e===n.EnrollmentPendingAccountUIConfirmation||e===n.EnrollmentPendingEmailConfirmation||e===n.EnrollmentPendingAccountConfirmation||e===n.EnrolledEmail||e===n.EnrolledAccount;t.isEnrollmentPendingUIConfirmation=e=>e===n.EnrollmentPendingEmailUIConfirmation||e===n.EnrollmentPendingAccountUIConfirmation;t.isUnenrollmentPendingUIConfirmation=e=>e===n.UnenrollmentPendingEmailUIConfirmation||e===n.UnenrollmentPendingAccountUIConfirmation;t.isGPCUserResetState=(e,t)=>t&&e===n.NotEnrolled;t.shouldEnrollLocally=e=>e===n.EnrolledAccount||e===n.EnrollmentPendingAccountConfirmation;t.shouldUnenrollLocally=e=>e===n.NotEnrolled;t.areSettingsSaved=e=>!(e===n.EnrollmentPendingAccountUIConfirmation||e===n.EnrollmentPendingEmailUIConfirmation||e===n.UnenrollmentPendingAccountUIConfirmation||e===n.UnenrollmentPendingEmailUIConfirmation||e===n.EnrollmentPendingEmailVerificationSent||e===n.EnrollmentPendingAccountVerificationSent);t.isFlowComplete=(e,t)=>e!==n.NotEnrolled&&t===n.NotEnrolled||(t===n.EnrollmentPendingEmailVerificationSent||t===n.EnrollmentPendingAccountVerificationSent)})),define("metaserver/static/js/ccpa_iframe/dns_form",["require","exports","tslib","react","metaserver/static/js/ccpa_iframe/dns_enrollment_state","metaserver/static/js/ccpa_iframe/api","@dropbox/dig-icons","@dropbox/dig-icons/assets","metaserver/static/js/core/notify","metaserver/static/js/core/i18n"],(function(e,t,n,r,o,a,i,s,l,c){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.DNSForm=void 0,r=n.__importDefault(r);const d=()=>c.intl.formatMessage({id:"zd0szP",defaultMessage:"You must confirm your email address to save your preferences. We will send you an email from no-reply@dropbox.com. Open the email and click Confirm Email Address to complete your preference submission."}),m=c.intl.formatMessage({id:"oQWTes",defaultMessage:"Please Confirm Email:"}),g=c.intl.formatMessage({id:"D09GlF",defaultMessage:"Resend"}),p=e=>{const{emails:t}=e;return r.default.createElement("p",{className:"email-confirm-msg"},m," ",t," ",r.default.createElement("button",{id:"email-resend",className:"email-resend",onClick:e=>(0,a.resendEmail)(t,u)},g),"?")};p.displayName="EmailConfirmMessage";const u=e=>{e?l.Notify.success(c.intl.formatMessage({id:"b+akES",defaultMessage:"Success! Email will be sent shortly."})):l.Notify.error(c.intl.formatMessage({id:"6w278K",defaultMessage:"Something went wrong! Try again later."}))},E=e=>{const{enrollmentState:t,userEmails:n,verifiedEmails:l,unverifiedEmails:p}=e,E=!(0,o.areSettingsSaved)(t),f=new Set([...n||[],...l||[],...p||[]]),C=Array.from(f).join(", ");let _;return E||(_=null==p?void 0:p.join(", ")),r.default.createElement("div",null,C&&r.default.createElement("div",null,r.default.createElement("p",{className:"settings-saved-text"},(e=>{const t=c.intl.formatMessage({id:"bnEYxL",defaultMessage:"Settings are saved for the following accounts:"}),n=c.intl.formatMessage({id:"OibIHY",defaultMessage:"Settings will be saved for the following accounts:"});return e?t:n})(!E)),r.default.createElement("div",{className:"dns-emails"},C)),_&&r.default.createElement("div",{className:"unverified-emails"},r.default.createElement(i.UIIcon,{src:s.WarningLine}),r.default.createElement("span",null,m," ",r.default.createElement("span",{className:"weight-500"},_)," ",r.default.createElement("button",{id:"email-resend",className:"email-resend",onClick:e=>(0,a.resendEmail)(p,u)},g))),(0,o.isEnrollmentPendingUIConfirmation)(t)&&r.default.createElement("p",{className:"email-verification-text"},d()))};E.displayName="EnrollmentDetails";const f=e=>{const{email:t,handleEmailChange:n,enrollmentState:a}=e,i=c.intl.formatMessage({id:"XtxsF7",defaultMessage:"Settings are saved for"}),s=!(0,o.areSettingsSaved)(a);return r.default.createElement("div",null,r.default.createElement("label",{className:"dns-email-label",htmlFor:"dns-email"},i),r.default.createElement("input",{type:"text",id:"dns-email",name:"dns-email",className:"dns-email",value:t,onChange:e=>{n(e.target.value)},placeholder:"example@dropbox.com"}),s&&r.default.createElement("p",{className:"email-verification-text"},d()))};f.displayName="EmailInputForm";t.DNSForm=e=>{const{enrollmentState:t,userEmails:n,verifiedEmails:a,unverifiedEmails:i,email:s,handleEmailChange:l}=e;return t===o.DNSEnrollmentState.EnrolledAccount||t===o.DNSEnrollmentState.EnrolledEmail||t===o.DNSEnrollmentState.EnrollmentPendingAccountVerificationSent||t===o.DNSEnrollmentState.EnrollmentPendingAccountConfirmation||t===o.DNSEnrollmentState.EnrollmentPendingAccountUIConfirmation||t===o.DNSEnrollmentState.UnenrollmentPendingAccountUIConfirmation||t===o.DNSEnrollmentState.UnenrollmentPendingEmailUIConfirmation?r.default.createElement(E,{userEmails:n,verifiedEmails:a,unverifiedEmails:i,enrollmentState:t}):t===o.DNSEnrollmentState.EnrollmentPendingEmailVerificationSent||t===o.DNSEnrollmentState.EnrollmentPendingEmailUIConfirmation?r.default.createElement(f,{enrollmentState:t,email:s,handleEmailChange:l}):t===o.DNSEnrollmentState.EnrollmentPendingEmailConfirmation?r.default.createElement(p,{emails:i}):null},t.DNSForm.displayName="DNSForm"})),define("metaserver/static/js/ccpa_iframe/gdpr_preferences",["require","exports","tslib","react","metaserver/static/js/core/i18n","metaserver/static/js/ccpa_iframe/preferences_category","metaserver/static/js/privacy_consent/i18n"],(function(e,t,n,r,o,a,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.GDPRPreferences=t.GDPRCategories=void 0,r=n.__importStar(r),t.GDPRCategories={allCategories:"all_categories",generalMarketing:"general_marketing_and_advertising",socialMedia:"social_media_marketing",analytics:"analytics",performanceFunctionality:"performance_and_functionality"};t.GDPRPreferences=e=>r.createElement(r.Fragment,null,r.createElement(a.PreferencesCategory,Object.assign({},e,{checked:e.allGdprToggle,disabled:e.disabled,onChange:e.onChange,title:o.intl.formatMessage(i.CATEGORY),id:t.GDPRCategories.allCategories,blurb:"",buttonLabel:(0,i.CATEGORY_DETAILS)(o.intl,e.gdprCount),titleClassName:"prefdiag-categoryheader",descClassName:"prefdiag-categorydesc"})),r.createElement(a.PreferencesCategory,Object.assign({},e,{checked:e.strictlyToggle,disabled:!0,onChange:e.onChange,title:o.intl.formatMessage(i.STRICTLY_NECESSARY_TITLE),id:"",blurb:o.intl.formatMessage(i.STRICTLY_NECESSARY_DETAILS),buttonLabel:"",titleClassName:"prefdiag-header",descClassName:"prefdiag-categorydesc"})),r.createElement(a.PreferencesCategory,Object.assign({},e,{checked:e.generalToggle,disabled:e.disabled,onChange:e.onChange,title:o.intl.formatMessage(i.GENERAL_MARKETING_AND_ADVERTISING_TITLE),id:t.GDPRCategories.generalMarketing,blurb:o.intl.formatMessage(i.GENERAL_MARKETING_AND_ADVERTISING_DETAILS),buttonLabel:"",titleClassName:"prefdiag-header",descClassName:"prefdiag-categorydesc"})),r.createElement(a.PreferencesCategory,Object.assign({},e,{checked:e.socialToggle,disabled:e.disabled,onChange:e.onChange,title:o.intl.formatMessage(i.SOCIAL_MEDIA_ADVERTISING_TITLE),id:t.GDPRCategories.socialMedia,blurb:o.intl.formatMessage(i.SOCIAL_MEDIA_ADVERTISING_DETAILS),buttonLabel:"",titleClassName:"prefdiag-header",descClassName:"prefdiag-categorydesc"})),r.createElement(a.PreferencesCategory,Object.assign({},e,{checked:e.analyticsToggle,disabled:e.disabled,onChange:e.onChange,title:o.intl.formatMessage(i.SOCIAL_ANALYTICS_TITLE),id:t.GDPRCategories.analytics,blurb:o.intl.formatMessage(i.SOCIAL_ANALYTICS_DETAILS),buttonLabel:"",titleClassName:"prefdiag-header",descClassName:"prefdiag-categorydesc"})),r.createElement(a.PreferencesCategory,Object.assign({},e,{checked:e.performanceToggle,disabled:e.disabled,onChange:e.onChange,title:o.intl.formatMessage(i.PERFORMANCE_AND_FUNCTIONALITY_TITLE),id:t.GDPRCategories.performanceFunctionality,blurb:o.intl.formatMessage(i.PERFORMANCE_AND_FUNCTIONALITY_DETAIL),buttonLabel:"",titleClassName:"prefdiag-header",descClassName:"prefdiag-categorydesc"}))),t.GDPRPreferences.displayName="GDPRPreferences"})),define("metaserver/static/js/ccpa_iframe/preferences_button",["require","exports","tslib","react","styled-components"],(function(e,t,n,r,o){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.PreferencesButton=void 0,r=n.__importStar(r),o=n.__importDefault(o);const a={default:"rgb(247, 245, 242)",hover:"#0061ff"},i={default:"rgb(30, 25, 25)",hover:"#0061ff"},s=o.default.button`
+  background-color: ${e=>a.default};
+  color: black;
+  padding: 9px 20px;
+  border-radius: 1px;
+  outline: 0;
+  text-transform: capitalize;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px lightgray;
+  transition: ease background-color 150ms;
+  font-size: 18px;
+  border: 1px solid rgb(0, 0, 0);
+  line-height: 26px;
+  flex-direction: column;
+  font-weight: 500px;
+  display: inline-block;
+  &:hover {
+    background-color: ${e=>a.hover};
+    color: white;
+  }
+  &:disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+`,l=o.default.button`
+  background-color: ${e=>i.default};
+  color: white;
+  padding: 9px 20px;
+  border-radius: 1px;
+  outline: 0;
+  text-transform: capitalize;
+  margin-left: 16px;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px lightgray;
+  transition: ease background-color 150ms;
+  font-size: 18px;
+  border: 1px solid rgb(0, 0, 0);
+  line-height: 26px;
+  flex-direction: column;
+  font-weight: 500px;
+  display: inline-block;
+  &:hover:enabled {
+    background-color: ${e=>i.hover};
+  }
+  &:disabled {
+    cursor: default;
+    opacity: 0.25;
+  }
+`;t.PreferencesButton=e=>r.createElement("div",{className:"button-footer"},r.createElement(s,{disabled:!1,onClick:()=>e.onChange(!1)},e.declineButtonText),r.createElement(l,{disabled:e.disabled,onClick:()=>e.onChange(!0)},e.acceptButtonText)),t.PreferencesButton.displayName="PreferencesButton"})),define("metaserver/static/js/ccpa_iframe/preferences_category",["require","exports","tslib","react","metaserver/static/js/ccpa_iframe/preferences_slider","classnames"],(function(e,t,n,r,o,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.PreferencesCategory=void 0,r=n.__importStar(r),a=n.__importDefault(a);t.PreferencesCategory=e=>r.createElement("div",{className:i},r.createElement("label",{id:e.id+"-label",className:e.titleClassName,htmlFor:e.id},e.title,r.createElement(o.PreferencesSlider,Object.assign({},e,{labelledby:e.id+"-label",describedby:e.id+"-blurb",name:e.id,onChange:e.onChange}))),r.createElement("p",{id:e.id+"-toggle-label",className:"prc-tp-cat-all-toggle-label"},e.buttonLabel),r.createElement("p",{id:e.id+"-blurb",className:e.descClassName},e.blurb)),t.PreferencesCategory.displayName="PreferencesCategory";const i=(0,a.default)({"border-top":!0,"dns-pref":!0})})),define("metaserver/static/js/ccpa_iframe/preferences_slider",["require","exports","tslib","react","classnames"],(function(e,t,n,r,o){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.PreferencesSlider=void 0,r=n.__importStar(r),o=n.__importDefault(o);t.PreferencesSlider=e=>{const t=(0,o.default)({"evidon-switch-slider":!0,slideron:e.checked,disabled:e.disabled});return r.createElement("label",{className:"evidon-switch",style:{flexShrink:0,alignSelf:"flex-start"},"aria-checked":e.checked,"aria-labelledby":e.labelledby,"aria-describedby":e.describedby},r.createElement("input",{type:"checkbox",id:e.id,name:e.name,"aria-labelledby":e.labelledby,"aria-describedby":e.describedby,"aria-checked":e.checked,checked:e.checked,disabled:e.disabled,onChange:t=>{e.onChange(t.target.checked,e.id,e.gdprCount)}}),r.createElement("div",{className:t}))},t.PreferencesSlider.displayName="PreferencesSlider"})),define("metaserver/static/js/ccpa_iframe/reentry_popout",["require","exports","tslib","react","styled-components","metaserver/static/js/core/i18n"],(function(e,t,n,r,o,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.CcpaReentryPopout=t.PopoutButtonIDs=void 0,r=n.__importStar(r),o=n.__importDefault(o),t.PopoutButtonIDs={reentryButton:"ccpa-reentry-popout-button",collapseToggle:"ccpa-reentry-popout-toggle"};t.CcpaReentryPopout=e=>r.createElement(r.Fragment,null,r.createElement(c,{id:t.PopoutButtonIDs.reentryButton},!e.isCollapsed&&r.createElement(r.Fragment,null,r.createElement(s,Object.assign({},e,{onClick:()=>{e.onClick(t.PopoutButtonIDs.reentryButton)}}),i)),r.createElement(l,{id:t.PopoutButtonIDs.collapseToggle,onClick:()=>{e.onClick(t.PopoutButtonIDs.collapseToggle)}},e.isCollapsed?r.createElement(r.Fragment,null," » "):r.createElement(r.Fragment,null," « ")))),t.CcpaReentryPopout.displayName="CcpaReentryPopout";const i=a.intl.formatMessage({id:"43UMTR",defaultMessage:"Cookies & CCPA preferences"}),s=o.default.button`
+  padding: 12px 9px;
+  cursor: pointer;
+  text-decoration: none;
+  background: rgb(255, 255, 255);
+  font-size: 12px;
+  line-height: 16px;
+  color: rgb(102, 102, 102);
+  border-top: 1px solid rgba(166, 158, 146, 0.6);
+  border-right: 1px solid rgba(166, 158, 146, 0.6);
+  border-bottom: 1px solid rgba(166, 158, 146, 0.6);
+  border-image: initial;
+  border-left: none;
+  margin: 0px 0px 16px;
+  white-space: nowrap;
+  display: inline-block;
+  visibility: visible;
+`,l=o.default.button`
+  padding: 12px 9px;
+  cursor: pointer;
+  text-decoration: none;
+  background: rgb(255, 255, 255);
+  font-size: 12px;
+  line-height: 16px;
+  color: rgb(102, 102, 102);
+  border-top: 1px solid rgba(166, 158, 146, 0.6);
+  border-right: 1px solid rgba(166, 158, 146, 0.6);
+  border-bottom: 1px solid rgba(166, 158, 146, 0.6);
+  border-image: initial;
+  border-left: none;
+  margin: 0px 0px 16px;
+  white-space: nowrap;
+  display: inline-block;
+  visibility: visible;
+`,c=o.default.div`
+  display: inline-block;
+  float: bottom;
+  position: fixed;
+  bottom: 0;
+`}));
+//# sourceMappingURL=pkg-privacy-consent.min.js-vflBIeXql.map

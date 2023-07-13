@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,r){"use strict";e.useStabilizedCallback=e=>{const t=r.react.exports.useRef(e);t.current=e;return r.react.exports.useRef(((...e)=>(0,t.current)(...e))).current}}));
+//# sourceMappingURL=c_hooks_use_stabilized_callback.js-vflx6bhTE.map

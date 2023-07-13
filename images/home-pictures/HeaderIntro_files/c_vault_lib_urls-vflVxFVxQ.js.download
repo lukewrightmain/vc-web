@@ -1,0 +1,2 @@
+define(["exports","./c_vault_constants","./e_ui_page_files_router","./c_core_uri"],(function(e,r,t,c){"use strict";function n(e={}){const t=c.URI.parse(r.VAULT_URL);return e.locked&&t.updateQuery({locked:"1"}),e.expired&&t.updateQuery({expired:"1"}),e.contUrl&&t.updateQuery({contUrl:e.contUrl}),t.toString()}e.cancelOnboarding=function(){t.redirect("/home")},e.redirectOnLock=function(){t.redirect(n({locked:!0}))},e.redirectOnLockExpiration=function(){t.redirect(n({expired:!0,contUrl:t.get_href()}))},e.unlockPageUrl=n}));
+//# sourceMappingURL=c_vault_lib_urls.js-vfltlZu_R.map

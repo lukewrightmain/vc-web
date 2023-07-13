@@ -1,0 +1,2 @@
+define(["exports","./c_browser_cookies"],(function(o,e){"use strict";o.assertDropboxDomain=function(o){const e=".dropbox.com",n=document.createElement("a");n.href=o;const t=n.hostname||window.location.hostname;if(-1===t.indexOf(e,t.length-e.length))throw new Error("Cannot send the CSRF token to "+t)},o.readCsrfToken=function(){return e.Cookies.read("__Host-js_csrf")}}));
+//# sourceMappingURL=c_csrf.js-vfliBvqZu.map

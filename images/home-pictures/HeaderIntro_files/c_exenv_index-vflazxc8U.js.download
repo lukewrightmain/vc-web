@@ -1,0 +1,2 @@
+define(["exports"],(function(e){"use strict";var n,t,o,i={exports:{}};n=i,t=!("undefined"==typeof window||!window.document||!window.document.createElement),o={canUseDOM:t,canUseWorkers:"undefined"!=typeof Worker,canUseEventListeners:t&&!(!window.addEventListener&&!window.attachEvent),canUseViewport:t&&!!window.screen},n.exports?n.exports=o:window.ExecutionEnvironment=o,e.exenv=i}));
+//# sourceMappingURL=c_exenv_index.js-vflbDB5II.map

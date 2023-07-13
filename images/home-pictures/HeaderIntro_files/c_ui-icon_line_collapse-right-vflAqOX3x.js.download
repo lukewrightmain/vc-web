@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.CollapseRightLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M17.91 3.95v16h1.5v-16h-1.5Zm-7.15 13.857 5.432-5.832-1.024-.953-4.527-4.763-1.087 1.034 3.814 4.012H4.625v1.5h8.744l-3.707 3.98 1.098 1.022Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_collapse-right.js-vflytEwAR.map

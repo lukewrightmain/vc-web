@@ -1,0 +1,2 @@
+define(["exports","./c_tslib","./e_edison","./e_ui_page_files_router"],(function(e,o,r,c){"use strict";const s=e=>{var{color:s,children:l}=e;o.__rest(e,["color","children"]);const n=r.react.exports.Children.only(l),i=c.classnames("mc-colorized-icon--colorized",n.props.className);return r.react.exports.cloneElement(n,{color:s,className:i})};s.displayName="ColorizedIcon",e.ColorizedIcon=s}));
+//# sourceMappingURL=c_spectrum_colorized_icon.js-vfl-nTnNt.map

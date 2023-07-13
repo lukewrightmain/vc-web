@@ -1,0 +1,2 @@
+define(["exports"],(function(e){"use strict";var i,a;e.SizeClass=void 0,(i=e.SizeClass||(e.SizeClass={}))[i.Small=1]="Small",i[i.Medium=2]="Medium",i[i.Large=3]="Large",i[i.ExtraLarge=4]="ExtraLarge",e.SizeSystem=void 0,(a=e.SizeSystem||(e.SizeSystem={})).DIG="dig",a.MAESTRO="maestro"}));
+//# sourceMappingURL=c_size_class_constants.js-vflXmNiqb.map

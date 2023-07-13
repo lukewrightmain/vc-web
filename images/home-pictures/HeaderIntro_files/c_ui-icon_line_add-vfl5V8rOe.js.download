@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.AddLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M11.75 4.5V19M19 11.75H4.5",stroke:"currentColor",strokeWidth:1.5,strokeMiterlimit:10}))}));
+//# sourceMappingURL=c_ui-icon_line_add.js-vflQ7ttw3.map

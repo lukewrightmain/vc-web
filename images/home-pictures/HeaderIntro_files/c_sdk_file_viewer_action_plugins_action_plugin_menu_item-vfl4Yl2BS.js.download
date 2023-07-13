@@ -1,0 +1,2 @@
+define(["exports","./c_tslib","./e_edison","./e_ui_page_files_router"],(function(e,n,t,i){"use strict";const c=t.React$1.forwardRef(((e,c)=>{var{children:r,onAction:o}=e,s=n.__rest(e,["children","onAction"]);const a={handler:o};return t.React$1.createElement(i.Menu.ActionItem,Object.assign({},s,{value:a,ref:c}),r)}));c.displayName="ActionPluginMenuItem",e.ActionPluginMenuItem=c}));
+//# sourceMappingURL=c_sdk_file_viewer_action_plugins_action_plugin_menu_item.js-vflXxnopR.map

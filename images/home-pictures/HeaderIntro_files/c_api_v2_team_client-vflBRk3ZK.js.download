@@ -1,0 +1,2 @@
+define(["exports","./c_api_v2_noauth_client","./e_ui_page_files_router"],(function(e,i,s){"use strict";class t extends i.ApiV2ClientBase{constructor(e){super(e)}_headers(e){const t=s.Viewer.get_viewer().get_user_by_id(e.subjectUserId);return Object.assign({[i.ApiV2HeaderNames.DropboxUid]:String(t.id)},e.headers)}}e.TeamApiV2Client=t}));
+//# sourceMappingURL=c_api_v2_team_client.js-vflJeg21a.map

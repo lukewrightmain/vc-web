@@ -1,0 +1,2 @@
+define(["exports","./e_ui_page_files_router"],(function(e,s){"use strict";const a=s.defineMessage({id:"u53xBc",defaultMessage:"Get approval"}),i=s.defineMessage({id:"GjJirE",defaultMessage:"Request approval"}),t=s.defineMessage({id:"nP9tTP",defaultMessage:"Request review"}),d=s.defineMessage({id:"xgnq6C",defaultMessage:"Get feedback"});e.approvalCopyExperimentString=e=>"REQUEST_APPROVAL"===e?i:"REQUEST_REVIEW"===e?t:"GET_FEEDBACK"===e?d:a,e.isApprovalEnabled=e=>"MULTI_APPROVER"===e}));
+//# sourceMappingURL=c_components_approval-forms_gating_utils.js-vflXDRgRw.map

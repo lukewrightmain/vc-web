@@ -1,0 +1,2 @@
+define(["exports"],(function(r){"use strict";r.shallowEqualArray=function(r,t){if(r===t)return!0;if(!r||!t||r.length!==t.length)return!1;for(let e=0;e<r.length;++e)if(r[e]!==t[e])return!1;return!0}}));
+//# sourceMappingURL=c_shallow_equal.js-vflsXeriG.map

@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.PaperDocLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M14.5 11H9v1.5h5.5V11ZM13 14H9v1.5h4V14Z",fill:"currentColor"}),t.react.exports.createElement("path",{d:"M17.341 6.03 15.97 4.66A2.265 2.265 0 0 0 14.379 4H5.5v16H18V7.622a2.236 2.236 0 0 0-.659-1.591ZM7 18.5v-13h7V8h2.5v10.5H7Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_paper-doc.js-vflxEYLo2.map

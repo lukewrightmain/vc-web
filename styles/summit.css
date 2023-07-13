@@ -232,7 +232,7 @@ nav {
 
 .btn-nav {
   border: none;
-  background-color: #690000;
+  background-color: #093246;
   color: white;
   padding: 10px 40px;
   font-size: 16px;
@@ -245,7 +245,7 @@ nav {
 
 .btn-nav:hover {
   background-color: #fff;
-  color: #690000;
+  color: #0b3950;
   transform: scale(1.1);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
@@ -504,7 +504,7 @@ nav {
 
 .btn-3 {
   border: none;
-  background-color: #690000;
+  background-color: #093246;
   color: white;
   padding: 10px 40px;
   font-size: 16px;
@@ -517,31 +517,11 @@ nav {
 
 .btn-3:hover {
   background-color: #fff;
-  color: #690000;
+  color: #093246;
   transform: scale(1.1);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
-
-.btn-nav {
-  border: none;
-  background-color: #690000;
-  color: white;
-  padding: 10px 40px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-nav:hover {
-  background-color: #fff;
-  color: #690000;
-  transform: scale(1.1);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-}
 /*#################END################### */
 /*--------------FOOTER STYLES-------------- */
 /*######################################### */

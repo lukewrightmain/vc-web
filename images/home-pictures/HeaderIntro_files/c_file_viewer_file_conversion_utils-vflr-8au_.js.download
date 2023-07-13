@@ -1,0 +1,2 @@
+define(["exports","./c_file_viewer_sdk_file_viewer_experiments"],(function(e,i){"use strict";e.getApprovalAndVersioningNewBadgeVariant=e=>e?i.fileViewerFlowExperiments.approvalAndVersioningNewBadgeByUserId[e.id]:"OFF",e.isManualVideoGifEnabled=e=>!(!e||!i.fileViewerFlowExperiments.manualVideoGifByUserId[e.id])}));
+//# sourceMappingURL=c_file_viewer_file_conversion_utils.js-vflZVH_xi.map

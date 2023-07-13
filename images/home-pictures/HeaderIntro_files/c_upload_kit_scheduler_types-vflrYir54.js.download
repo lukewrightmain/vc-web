@@ -1,0 +1,2 @@
+define(["exports"],(function(e){"use strict";var l;e.UploadSchedulerStatus=void 0,(l=e.UploadSchedulerStatus||(e.UploadSchedulerStatus={})).Queued="Queued",l.Uploading="Uploading",l.Committing="Committing",l.Completed="Completed",l.Error="Error",l.Cancelling="Cancelling",l.Cancelled="Cancelled",l.Stopped="Stopped";e.UploadHybridScheduler=class{constructor(e){}},e.UploadScheduler=class{constructor(e){}},e.UploadSessionScheduler=class{constructor(e){}}}));
+//# sourceMappingURL=c_upload_kit_scheduler_types.js-vflXbRNnb.map

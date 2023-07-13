@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,l){"use strict";e.DropboxLine=e=>l.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},l.react.exports.createElement("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M8 5 4 7.5 8 10l-4 2.5L8 15l4-2.5 4 2.5 4-2.5-4-2.5 4-2.466L16 5l-4 2.5L8 5Zm4 2.5 4 2.5-4 2.5L8 10l4-2.5Z",fill:"currentColor"}),l.react.exports.createElement("path",{d:"m8 16.5 4-2.5 4 2.5-4 2.5-4-2.5Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_dropbox.js-vflR4etNI.map

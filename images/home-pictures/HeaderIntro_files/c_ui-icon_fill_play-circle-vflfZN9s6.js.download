@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.PlayCircleFill=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M12 4c-5.159 0-8 2.841-8 8s2.841 8 8 8 8-2.841 8-8-2.841-8-8-8Zm-2 11.5v-7l5.5 3.5-5.5 3.5Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_fill_play-circle.js-vfl_JAw5W.map

@@ -1,0 +1,2 @@
+define(["exports"],(function(e){"use strict";e.copyToClipboard=function(e,t,n){const o=document.createElement("input");o.type="text",o.value=e,document.body.appendChild(o),o.select();let c=!1;try{c=document.execCommand("copy")}catch(e){}document.body.removeChild(o),c?null==t||t():null==n||n()}}));
+//# sourceMappingURL=c_clipboard_v3.js-vflMZ3OZO.map

@@ -1,0 +1,2 @@
+define(["exports","./c_core_browser_detection"],(function(e,t){"use strict";var i;e.DeviceType=void 0,(i=e.DeviceType||(e.DeviceType={})).desktop="desktop",i.mobile="mobile",i.tablet="tablet",e.getDeviceType=function(){return t.is_supported_mobile_browser()?e.DeviceType.mobile:t.is_tablet()?e.DeviceType.tablet:e.DeviceType.desktop}}));
+//# sourceMappingURL=c_loggers_device_type.js-vflWyDSpu.map

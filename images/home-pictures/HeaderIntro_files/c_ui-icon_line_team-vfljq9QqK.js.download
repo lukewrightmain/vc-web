@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.TeamLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M8 8h3.5v1.5H8V8Zm3.5 3H8v1.5h3.5V11ZM8 14h3.5v1.5H8V14Z",fill:"currentColor"}),t.react.exports.createElement("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M14.5 4.5v6H19V19H5V4.5h9.5Zm-8 13H13V6H6.5v11.5Zm8 0h3V12h-3v5.5Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_team.js-vflnENFeh.map

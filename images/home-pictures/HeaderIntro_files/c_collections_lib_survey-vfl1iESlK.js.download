@@ -1,0 +1,2 @@
+define(["exports","./e_ui_page_files_router"],(function(e,t){"use strict";e.trackNavigateToNewCollection=function(){t.UserSurvey.trackEvent("navigate_to_new_collection","collections")},e.trackViewCollectionDetailsPage=function(){t.UserSurvey.trackEvent("view_collection_details_page","collections")}}));
+//# sourceMappingURL=c_collections_lib_survey.js-vflbxjuwb.map

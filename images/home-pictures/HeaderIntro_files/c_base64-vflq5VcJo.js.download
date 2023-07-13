@@ -1,0 +1,2 @@
+define(["exports"],(function(t){"use strict";t.encode=function(t){const c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";let e,n,r,o,h,i,s,a,A=0,d=0,f="";const l=[];if(!t)return t;for(;e=t.charCodeAt(A++),n=t.charCodeAt(A++),r=t.charCodeAt(A++),a=e<<16|n<<8|r,o=a>>18&63,h=a>>12&63,i=a>>6&63,s=63&a,l[d++]=c.charAt(o)+c.charAt(h)+c.charAt(i)+c.charAt(s),A<t.length;);f=l.join("");const u=t.length%3;return(u?f.slice(0,u-3):f)+"===".slice(u||3)}}));
+//# sourceMappingURL=c_base64.js-vflbNAxJ0.map

@@ -1,0 +1,2 @@
+define(["exports","metaserver/static/js/modules/constants/sharing"],(function(e,n){"use strict";const _={hasNewOwnershipModel:e=>Boolean(n.GOLDEN_GATE.HAS_NEW_OWNERSHIP_MODEL[e]),hasContentManagerAndSuperAdmin:e=>Boolean(n.GOLDEN_GATE.HAS_CONTENT_MANAGER_AND_SUPER_ADMIN[e]),hasContentManagerCdm:e=>Boolean(n.GOLDEN_GATE.HAS_CONTENT_MANAGER_CDM[e]),hasContentManagerFolderRestore:e=>Boolean(n.GOLDEN_GATE.CAN_RESTORE_FOLDERS_IN_CM[e]),SHARING_TOTAL_LIMIT:n.GOLDEN_GATE.SHARING_TOTAL_LIMIT};e.GoldenGate=_}));
+//# sourceMappingURL=c_sharing_gating_util.js-vflx26Qs8.map

@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.AvailableOfflineSync=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M12 4c-5.159 0-8 2.841-8 8s2.841 8 8 8 8-2.841 8-8-2.841-8-8-8Z",fill:"#00864C"}),t.react.exports.createElement("path",{d:"M11.03 12.97 9.062 11 8 12.061l3.03 3.03 5.031-5.03L15 9l-3.97 3.97Z",fill:"#fff"}))}));
+//# sourceMappingURL=c_ui-icon_sync_available-offline.js-vfl-1Bvrm.map

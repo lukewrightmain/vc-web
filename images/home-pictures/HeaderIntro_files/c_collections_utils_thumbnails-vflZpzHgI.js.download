@@ -1,0 +1,2 @@
+define(["exports"],(function(e){"use strict";e.getThumbnailUrl=function(e,t={size:"320x320",sizeMode:4}){if(void 0!==e){if(e.startsWith("data:"))return e;try{const s=new URL(e);return s.searchParams.set("size",t.size),s.searchParams.set("size_mode",t.sizeMode.toString()),s.toString()}catch(e){return}}}}));
+//# sourceMappingURL=c_collections_utils_thumbnails.js-vflx00yz6.map

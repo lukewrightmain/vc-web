@@ -1,0 +1,2 @@
+define(["exports","./e_ui_page_files_router"],(function(e,t){"use strict";let i;e.getStoreForActivation=()=>(i||(i=t.getStoreAndRegisterReducers({[t.ACTIVATION_NAMESPACE_KEY]:t.activationReducer})),i)}));
+//# sourceMappingURL=c_activation_data_store.js-vfl2Jv7yw.map

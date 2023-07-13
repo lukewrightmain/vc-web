@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.FlipVerticalLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M19.5 10H18V6H6v4H4.5V4.5h15V10ZM6 16.5v-2H4.5v2H6ZM4.5 18H6v1.5H4.5V18Zm3 0v1.5h2V18h-2Zm3.5 1.5V18h2v1.5h-2Zm3.5-1.5v1.5h2V18h-2Zm3.5 1.5h1.5V18H18v1.5Zm0-3v-2h1.5v2H18Zm3-5H3V13h18v-1.5Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_flip-vertical.js-vfliFVnaZ.map

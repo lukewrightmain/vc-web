@@ -1,0 +1,2 @@
+define(["exports"],(function(e){"use strict";var o;e.PreviewType=void 0,(o=e.PreviewType||(e.PreviewType={})).Archive="archive",o.Audio="audio",o.CloudDoc="cloud_doc",o.Excel="excel",o.Error="error",o.HTML="html",o.Image="image",o.Linkfile="linkfile",o.Other="other",o.SsrDoc="ssr_doc",o.RawHTML="raw_html",o.Restricted="restricted",o.Video="video",o.Loading="loading",o.Doc="doc",o.Photo="photo",o.Text="text"}));
+//# sourceMappingURL=c_core_types_preview_type.js-vflWbPAho.map

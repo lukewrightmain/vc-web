@@ -1,0 +1,2 @@
+define(["exports"],(function(t){"use strict";t.dispatchCustomEvent=function(t,n){window.dispatchEvent(function(t,n={detail:null}){if("function"==typeof CustomEvent)return new CustomEvent(t,n);const e=document.createEvent("CustomEvent");return e.initCustomEvent(t,!0,!0,n.detail),e}(t,n))}}));
+//# sourceMappingURL=c_ux_analytics_dispatch_custom_event.js-vflc_Ml6f.map

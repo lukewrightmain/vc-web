@@ -1,0 +1,2 @@
+define(["exports","./c_tslib"],(function(t,i){"use strict";t.makeAction=({importer:t,args:e})=>()=>i.__awaiter(void 0,void 0,void 0,(function*(){const i="function"==typeof e?e():e,n=yield t(i);return("default"in n?n.default:n)(i)}))}));
+//# sourceMappingURL=c_file_viewer_utils_async_action.js-vflUb_neP.map

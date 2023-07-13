@@ -1,0 +1,2 @@
+define(["exports","./e_edison","./e_ui_page_files_router"],(function(e,s,t){"use strict";e.useUser=()=>{const e=s.React$1.useMemo((()=>s.Edison.getActiveUserId()),[]);return s.React$1.useMemo((()=>e?t.Viewer.get_viewer().get_user_by_id(e):null),[e])}}));
+//# sourceMappingURL=c_src_user.js-vflzhaiNm.map

@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.RotateRightLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M14 10h4.5V5.5H17v1.879C16.084 6.362 14.557 5.5 12 5.5c-4.191 0-6.5 2.309-6.5 6.5 0 4.192 2.309 6.5 6.5 6.5a7.344 7.344 0 0 0 3.895-.95l-.787-1.277A5.894 5.894 0 0 1 12 17c-3.364 0-5-1.636-5-5s1.636-5 5-5c1.825 0 3.15.51 3.973 1.5H14V10Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_rotate-right.js-vfl-yIVm6.map

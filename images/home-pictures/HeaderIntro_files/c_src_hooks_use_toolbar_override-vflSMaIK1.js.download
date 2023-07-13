@@ -1,0 +1,2 @@
+define(["exports","./e_edison","./e_ui_page_files_router","./c_src_file_viewer_components"],(function(e,i,r,o){"use strict";e.useOverrideToolbar=function(e,t){const n=r.useDispatch();i.react.exports.useEffect((()=>(n(o.overrideFloatingToolbar({fileViewerId:e,state:t,internal:!0})),()=>{n(o.overrideFloatingToolbar({fileViewerId:e,state:void 0,internal:!0}))})),[t,e])}}));
+//# sourceMappingURL=c_src_hooks_use_toolbar_override.js-vflJGkgNV.map

@@ -1,0 +1,2 @@
+define(["exports","./e_ui_page_files_router"],(function(t,e){"use strict";t.logExposure=t=>{const a=e.getGatingClientSingleton(),r={stormcrowVariantInfo:{feature:t.feature,variant:t.variant,metadata:t.metadata,status:t.status}};a.logExposure(r)}}));
+//# sourceMappingURL=c_flows_utils_exposure_logger.js-vflicD-Df.map

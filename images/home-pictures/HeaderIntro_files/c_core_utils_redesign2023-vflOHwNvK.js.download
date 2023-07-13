@@ -1,0 +1,2 @@
+define(["exports"],(function(e){"use strict";function i(e){return e&&e.previews_exp_ui_redesign?"OFF"===e.previews_exp_ui_redesign||"CONTROL"===e.previews_exp_ui_redesign?"OFF":e.previews_exp_ui_redesign:"OFF"}e.getRedesign2023Variant=i,e.isRedesign2023Enabled=function(e){return"V2"===i(e)}}));
+//# sourceMappingURL=c_core_utils_redesign2023.js-vfl2opIj7.map

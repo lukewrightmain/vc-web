@@ -1,0 +1,2 @@
+define(["require","exports","./c_tslib","./e_ui_page_files_router"],(function(o,t,e,i){"use strict";const n=i.Loadable({loader:()=>e.__awaiter(void 0,void 0,void 0,(function*(){yield i.waitForTTI();const{OnboardingChecklistShareButtonTooltip:t}=yield new Promise((function(t,e){o(["./c_onboarding_checklist_share_button_tooltip"],t,e)}));return i.getStoreForBrowse(),t}))});t.AsyncOnboardingChecklistShareButtonTooltip=n}));
+//# sourceMappingURL=c_onboarding_checklist_async_share_button_tooltip.js-vflXiNgTW.map

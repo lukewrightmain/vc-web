@@ -1,0 +1,2 @@
+define(["exports"],(function(a){"use strict";var e;a.CampaignPageName=void 0,(e=a.CampaignPageName||(a.CampaignPageName={})).BROWSE="browse",e.TRANSFER="transfer",e.DASH_HOME="dash_home"}));
+//# sourceMappingURL=c_campaigns_campaign_enums.js-vflou8Vb5.map

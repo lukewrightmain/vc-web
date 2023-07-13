@@ -1,0 +1,2 @@
+define(["exports","./e_edison"],(function(e,t){"use strict";e.DropboxReplayLine=e=>t.react.exports.createElement("svg",{viewBox:"0 0 24 24",fill:"none",...e},t.react.exports.createElement("path",{d:"M4.95 15.057V8.91L12 3.975v6.099l-2.705 1.918L12 13.893v6.132l-7.05-4.967Zm7.05 0V8.91l7.05-4.935v6.099l-2.705 1.918 2.705 1.901v6.132L12 15.058Z",fill:"currentColor"}))}));
+//# sourceMappingURL=c_ui-icon_line_dropbox-replay.js-vflYzoknb.map
